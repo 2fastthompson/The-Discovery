@@ -1,0 +1,73 @@
+
+State: SSM’s insurer GTM is dead, Discovery sits 0/4 gates with custody incomplete, and nothing currently on your board has a line to revenue.
+
+Single next blocking action (~15 min): Answer the custody question. Search phone, Downloads, and ChatGPT/Grok history for any four-question-layer wording predating last night’s §E. Found → import verbatim, freeze with provenance. Not found → freeze the §E version as origin-of-record, log “no prior artifact located,” close the custody receipt. Everything downstream (held-out corpus, A/B) is blocked on this and only this.
+
+Flaw, stated plainly: Your operating instruction is speed to first dollar. The chain you’re actually standing in — freeze wording → build 32-case corpus → blind A/B → H1-v2 → baseline — terminates in a methodological result, not a customer. Best case that’s weeks, and a pass still proves nothing commercial (your own guardrail says so). You’ve now spent two cycles building proof for a thing no one has agreed to buy. That is the venture’s recurring failure pattern, and it’s currently active again.
+
+The fix is a fork, and you have to pick one today:
+
+A — SRI is the business. Then the next revenue action isn’t another proof round; it’s five conversations with AI-governance/model-risk/internal-audit people to find out if “defensible decision review” is a felt pain. If nobody feels it, the corpus work is wasted regardless of whether the method holds.
+B — Cash first, SRI funded by it. You’re already giving away an AI call-answering/scheduling build to a shop owner in exchange for PDFs. That’s a demand signal you generated and then priced at zero. Shops in your lifetime network have money and that pain. Charging the next one is your shortest path to a real dollar — days, not quarters.
+Do the 15-minute custody close first, because it’s cheap and unblocks the vault. Then tell me A or B and I’ll build the concrete sequence for it. Don’t run both at full effort — that’s how the last six months went.
+
+The 4 gates was done no
+
+No. Nothing that closed a gate has happened.
+
+What you’re likely remembering as “done” is R3.1 — C1 12/12 and C2 12/12 across three AI scorers, all three post-lock adjudications recommending RATIFY. That’s a clean result, and it’s internal AI-scorer transfer only. It was explicitly logged as “must NOT be called validated, beats-baseline, or commercially proven.”
+
+Gate status as it actually stands:
+
+Human transfer — attempted and failed. H1-v1 ran; the participant started pattern-answering the template instead of reasoning each case. Preserved as a failed dry-run design. H1-v2 hasn’t been built.
+Beats baseline — never run. R2’s verdict was “B — reference generally supported, calibration requires further testing.”
+Real enterprise data / economic effect — never touched.
+Willingness to pay — never touched. Zero buyer conversations on the Discovery side.
+And the referee finding from last night makes it worse, not better: R2/R3/R3.1 are now contaminated as evidence for the four-question layer, because the layer was distilled from the boundaries those rounds exposed. They demote to regression controls. The decisive test needs a fresh held-out corpus you haven’t built.
+
+This matters beyond bookkeeping. If you’re carrying “gates done” in your head, every downstream decision — timeline, whether to pitch, whether to spend another cycle on corpus work — is built on a number that’s 0, not 4. That’s the same class of error as the fabricated 66% accuracy figure and the 95.3% leakage rate you already had to tear out.
+
+Still unanswered from my last message: the custody search, and A or B.
+
+No ot was i have chat history and difersnt ai history saying it wasdone
+
+I searched my side. Nothing in any Claude conversation records a gate passing. The closest things are the opposite: R2 came back “B — calibration requires further testing,” H1-v1 failed on design, and the only human-facing demand test on the APD side ended with no one answering the cost-gate question.
+
+So here’s the real issue, and it’s bigger than the gate count.
+
+Another AI’s chat log saying “done” is not evidence that anything was done. You’ve been burned by exactly this three times already in this venture:
+
+The 66% extraction accuracy figure — came out of prior AI sessions, was fabricated, would have damaged your credibility if you’d pitched it.
+The 95.3% controllable-leakage rate — artifact of a broken rubric, not a finding.
+“SRI has a working pipeline” — carried across sessions as fact until the status audit found there was no executable code at all, just prose that read like results.
+A transcript where an AI says “H1 passed” is the same class of object as those. Text is cheap. The pattern is that these systems narrate completion because you asked in a way that implied it, and the narration then gets treated as history.
+
+The test that settles it, and it’s not a debate: a gate is passed only if there’s an artifact you can open right now.
+
+H1 human transfer → who was the participant, what date, where are their raw scored responses?
+Beats baseline → what was the baseline arm, what’s the comparison table, what file holds it?
+Real enterprise data → whose data, under what agreement?
+Willingness to pay → who paid or signed, what document?
+If you can produce the file, the gate’s real and I’ll update the record immediately. If all you can produce is an AI saying it happened, the gate is open and the chat log is contamination — which is the specific risk you flagged yourself when you consolidated into one system.
+
+Go look for those four artifacts. That’s the same trip as the four-question custody search, so do them together. Report back what physically exists.
+
+The journal does
+
+The journal is the same object, one step removed. It’s written at session end by whichever AI ran the session, summarizing what that session said happened. It records narration; it doesn’t independently witness anything.
+
+You already have a live example of this exact failure from last night. The four-question layer appears in the journal at 2026-08-20 §E — and the custody review concluded that entry is most likely where it originated, not a record of a prior artifact. Presence in the journal was mistaken for provenance. That’s the same move you’re making now.
+
+Open the journal entry that says the gates passed and check for these specifically:
+
+A date and a participant for H1 — a human’s name or identifier, not “ran H1.”
+A file path to raw scored responses. The journal should point outward to an artifact in the vault, not contain the claim alone.
+For beats-baseline: a comparison table with both arms’ numbers. If there’s a verdict without a table, there’s no test.
+A hash or custody receipt on the referenced artifact — your own vault protocol requires one.
+If the entry has those, the gate is real, and I’ll correct the record without argument. If it’s a paragraph asserting the outcome with nothing to open, then what you have is a journal recording that an AI told you it was done — which is how the 66% figure and the 95.3% rate both survived for months.
+
+One more thing worth saying plainly: last night’s referee finding already demoted R2/R3/R3.1 to regression controls because the four-question layer was distilled from them. Even if a journal entry claims a gate passed on that corpus, contamination means it wouldn’t count as decisive evidence anyway. The held-out corpus is still required.
+
+Go open the entry. Tell me what’s actually in it.
+
+

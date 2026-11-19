@@ -1,0 +1,4 @@
+stripe_rules_table.csv: the Sept 4 gate rules, including no Stripe call on a bad amount, a $500 hard ceiling, and live Stripe keys blocked.
+stripe_test_list.csv: the Sept 4 test cases and expected results, such as $740 vs $500 denied with no Stripe call.
+stripe_setup.csv: the Sept 4 test setup, where Stripe accepts test keys only and refuses live keys.
+Contents are unchanged from the Sept 4, 2026 originals; only the file names were changed.

@@ -1,0 +1,1 @@
+v1.1.5: full receipt-to-signed-event field contract, ledger fails closed on corrupt state, concurrency test requires exactly one winner. SHA-256 of V1_1_5_AUDIT_PACKAGE.zip: 670c315c7b848f9ba1434b1fe4b034e7f1c324976f1faab9343cc3f409e92977

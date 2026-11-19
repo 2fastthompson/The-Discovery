@@ -1,0 +1,217 @@
+ECTIVE]
+You are acting as an independent blinded evaluator in a controlled decision-analysis experiment.
+You have no relationship to the framework being tested and must not attempt to agree with, validate, promote, or improve it.
+Your job is to evaluate the supplied cases strictly from the evidence contained in the blind test packet.
+CRITICAL BLINDING RULE
+For every case, treat the T0 information state as sealed.
+You must not use:
+
+information learned after T0;
+your outside knowledge of what ultimately happened;
+familiarity with famous incidents;
+later investigations unless they are explicitly supplied as T1 evidence;
+assumptions about facts not contained in the packet.
+Even if you recognize a case, you must reason as though you do not know its eventual outcome.
+Later evidence must never be projected backward into T0.
+EXPERIMENTAL ARMS
+Score every case independently under all three arms.
+Do not allow reasoning from one arm to influence another arm.
+ARM A — GENERIC REVIEW
+Using ordinary professional judgment only, answer:
+
+Was the decision at T0 reasonable, unreasonable, or not decidable from the supplied evidence?
+What evidence supports that conclusion?
+What additional information, if any, would have been necessary at T0?
+Allowed outputs:
+
+REASONABLE
+UNREASONABLE
+NOT DECIDABLE
+ARM B — COMPETENT DOMAIN-NEUTRAL CHECKLIST
+Evaluate the T0 decision using only these questions:
+
+Were material warning signals present?
+Were important facts missing or uncertain?
+Did available evidence materially contradict the chosen action?
+Was escalation, delay, additional investigation, or another safeguard reasonably available?
+Was the decision-maker acting within identifiable authority?
+Would a competent reviewer have had sufficient contemporaneous reason to question the decision?
+Then classify:
+
+SUPPORTED
+QUESTIONABLE
+UNSUPPORTED
+INSUFFICIENT EVIDENCE
+Do not use hindsight.
+ARM C — FROZEN SRI DISCOVERY
+Apply the following framework exactly as written.
+Do not modify, improve, reinterpret, or add categories.
+1. T0 RECONSTRUCTION
+Identify only the evidence, rules, context, and authority actually available at the decision moment.
+2. KNOWABILITY
+Assign one:
+K0 — Not Knowable
+The surviving T0 record is insufficient to support the relevant conclusion.
+Required consequence:
+K0 → ABSTAIN
+K1 — Weakly Knowable
+Fragmentary, ambiguous, or low-confidence evidence exists.
+K2 — Materially Knowable
+Sufficient evidence exists to support meaningful judgment, though uncertainty remains.
+K3 — Strongly Knowable
+Clear, substantial contemporaneous evidence supports judgment.
+3. EVIDENCE–DECISION ALIGNMENT
+Assign one:
+A — ALIGNED
+The decision was reasonably supported by the evidence available at T0.
+D — DIVERGENT
+The T0 evidence materially supported a different action, escalation, investigation, safeguard, or decision.
+ABSTAIN
+Required when the record does not support a defensible alignment judgment.
+OUT OF SCOPE / BASIC COMPLIANCE
+Use when the central failure is simply violation of an explicit deterministic rule or an objectively checkable requirement and does not require this adjudication framework.
+4. AUTHORITY
+Evaluate authority separately from evidentiary correctness.
+Use:
+
+PRESENT
+ABSENT
+INDETERMINATE
+Do not infer that a decision was evidentially correct merely because the actor was authorized.
+Do not infer that an actor had authority merely because the evidence supported the action.
+5. HINDSIGHT FIREWALL
+Explicitly state whether your T0 judgment relied on any evidence unavailable at T0.
+The required answer should normally be:
+NO
+If you detect hindsight contamination in your own reasoning, correct the analysis before locking the result.
+6. CORRECTIVE WINDOW
+Determine whether, using only information available at the relevant time, there was a legitimate opportunity to reconsider, escalate, investigate, delay, stop, or otherwise alter the decision.
+Use:
+
+YES
+NO
+INDETERMINATE
+Identify the earliest defensible point only if the record supports one.
+7. TRAJECTORY
+Only after later evidence is explicitly supplied may you assess subsequent trajectory.
+Use only:
+
+W
+P
+C
+S
+INDETERMINATE
+Do not manufacture a trajectory where there are insufficient decision-state observations.
+If the supplied record does not justify classification, use:
+INDETERMINATE
+IMPORTANT EXCLUSIONS
+A bad eventual outcome does not prove the T0 decision was bad.
+A good eventual outcome does not prove the T0 decision was good.
+Later evidence does not increase T0 knowability.
+Authority does not establish evidentiary correctness.
+Evidence correctness does not create authority.
+A second AI's opinion does not establish truth.
+Missing evidence must produce uncertainty or abstention—not invented facts.
+Explicit deterministic violations should be classified as OUT OF SCOPE / BASIC COMPLIANCE when appropriate.
+REQUIRED OUTPUT FOR EACH CASE
+Use exactly this structure:
+CASE [ID]
+ARM A — GENERIC REVIEW
+Disposition:
+Reasoning:
+Missing T0 information:
+ARM B — CHECKLIST
+Warning signals:
+Missing/uncertain facts:
+Contradictory evidence:
+Alternative/escalation available:
+Authority:
+Sufficient reason to question:
+Disposition:
+ARM C — SRI DISCOVERY
+T0 Reconstruction:
+Knowability: K0 / K1 / K2 / K3
+Evidence–Decision Alignment: A / D / ABSTAIN / OUT OF SCOPE
+Authority: PRESENT / ABSENT / INDETERMINATE
+Hindsight Contamination: YES / NO
+Corrective Window: YES / NO / INDETERMINATE
+Trajectory: W / P / C / S / INDETERMINATE
+Reasoning:
+CONFIDENCE
+0–100%
+FINAL CROSS-CASE SUMMARY
+After scoring every case, provide:
+
+Number of cases where Arms A, B, and C reached materially equivalent conclusions.
+Cases where SRI Discovery reached a materially different conclusion.
+Cases where SRI Discovery abstained but another arm did not.
+Cases where another arm appears to have used hindsight.
+Cases classified OUT OF SCOPE by Discovery.
+Cases where authority and evidentiary correctness differed.
+Whether any arm demonstrated systematic overconfidence.
+Whether the supplied evidence supports a conclusion that one method materially outperformed another.
+Do not assume that the SRI Discovery arm should win.
+If there is no meaningful difference between the three approaches, state that plainly.
+If the experiment is insufficient to establish superiority, state:
+SUPERIORITY NOT ESTABLISHED.
+LOCKING INSTRUCTION
+Complete and lock all answers before requesting or viewing any reference answers.
+At the end write:
+SCORING LOCKED — NO REFERENCE ANSWERS VIEWED.
+Do not revise the scores after they are locked unless explicitly instructed to conduct a separate adjudication phase.
+
+SRI_Discovery_20260818_Claude_Vault_Closeout_Handoff.md
+SRI_Discovery_20260818_Claude_Vault_Closeou
+t_Handoff
+.md
+MD
+can you put that in the vault ansd journal entery
+
+On it. I can’t reach your actual vault (no folder is connected to this session), so I’ll assemble the closeout package in the exact 2026-08-18_CLOSEOUT/ structure from §11 — with the handoff filed, this session’s Claude scorer outputs placed and provenance-labeled, a dated journal entry, a manifest, and SHA-256 hashes — then hand it back as a drop-in zip. If you click “Add folder” on your vault, I can write it straight into 07_RESEARCH_INTEL/SRI_DISCOVERY/ instead.
+
+Please. Uh, how do you want when you connect? Normally, you connect automatically.
+
+Package built. Now delivering it and recording the durable state for future sessions.
+
+Filed. The closeout package is built to the §11 structure and delivered two ways: the zip (SRI_Discovery_2026-08-18_CLOSEOUT_vault.zip) unzips straight into your vault so the tree lands at 07_RESEARCH_INTEL/SRI_DISCOVERY/2026-08-18_CLOSEOUT/, and the journal entry is delivered on its own too. Inside: the handoff in 00_CLOSEOUT/, this session’s Claude R2/R3/R3.1 blind + post-lock files placed and provenance-labeled, NOTE_PENDING.md markers in every folder whose contents you still need to add (Grok/Gemini outputs, protocols, references, DH-02.1 base, §13 docs), a README_MANIFEST.md, and _HASHES/SHA256SUMS.txt over all 24 files. I kept every locked artifact unchanged and made no edits to the method.
+
+On connecting — I don’t auto-connect to your machine’s files. This session can see your device (win-nrb32mn808p) but no folder is shared with it yet, so I can’t write into your vault directly; that’s why I handed back a zip. To let me write straight into the vault:
+
+Click “Add folder” in the Claude desktop app and pick your vault folder (or its parent that contains 07_RESEARCH_INTEL). Once it’s shared, I’ll get a signal here and can drop the whole tree into place on your disk, hashes and all — no manual unzip. If you’d rather keep it manual, just unzip the file into your vault root and you’re done.
+
+Want me to write it directly once you’ve added the folder? If so, add it and say go. I also left the seven new §13 closeout documents (Current Status, Claims Language Control, R2/R3/R3.1 Final Findings, H1 placeholder) unwritten — say the word and I’ll generate those into 00_CLOSEOUT/, 02_RATIFICATION/, and the round folders before you close the session.
+
+Sri discovery 2026 08 18 closeout vault
+ZIP
+2026 08 18 sri discovery closeout journal
+Document
+·MD
+this qwew it goes in the vault
+
+They connected C:\SRI_COMMAND_CENTER. Let me look at its structure to find where the vault lives so I write to the right place.
+
+in the vault and update the journal.
+
+Now I can see your vault. The closeout goes to 07_RESEARCH_INTEL\SRI_DISCOVERY\2026-08-18_CLOSEOUT\, and “the journal” is your 00_SESSION_JOURNAL\ with dated YYYY-MM-DD_session.md files — there’s no 2026-08-18 entry yet, so I’ll add one in your format. Let me check the mount and read your latest session entry to match its style.
+
+Your journal format is clear — I’ll match it (one-line, arc, decisions, open, 3-layer footer, resume line), faithful to today’s actual work. Writing today’s session entry, then committing both the closeout package and the journal to your disk.
+
+Done — both are written to your actual vault on win-nrb32mn808p.
+
+In the vault → 07_RESEARCH_INTEL\SRI_DISCOVERY\2026-08-18_CLOSEOUT\: the full §11 tree is in place with the handoff, this session’s Claude R2/R3/R3.1 blind + post-lock files (provenance-labeled), the closeout journal, README_MANIFEST.md, _HASHES\SHA256SUMS.txt, and a zipped snapshot of the package in 00_CLOSEOUT\. Every folder still needing your other-scorer/base files carries a NOTE_PENDING.md marker. Staging zip cleaned out of the vault root.
+
+Journal updated → 00_SESSION_JOURNAL\2026-08-18_session.md, written in your existing format (one-line, arc, decisions, still-open, 3-layer footer, resume line).
+
+I kept every locked artifact and reference key unchanged and made no edits to the method. On the record in that journal: the three scoring misses I conceded this series — R2 Case 03 (under-call), R3 Case 08 (walked into the K0/ABSTAIN trap), R3.1 02/04 (Corrective-Window over-call, wrong generalization retracted).
+
+Two things I did not do, both flagged as offered rather than assumed:
+
+The seven §13 closeout documents (Current Status, C1/C2 Ratification Addendum, R2/R3/R3.1 Final Findings, Claims Language Control, H1 placeholder) — not written yet.
+Grok/Gemini artifacts and the DH-02.1 base/spec — not held by this session; their slots are marked pending.
+Per the handoff, the session is now at closeout and the next authorized gate is H1 — Independent Human Transfer (no more AI rounds by default). Want me to author those seven §13 documents into the tree before you close it out?
+
+2026 08 18 session
+Document
+·MD
+
+Permission mode is set to Auto. Claude runs on its own and pauses if anything looks unsafe. This includes using your connectors and Claude in Chrome, unless you turn them off. Learn more

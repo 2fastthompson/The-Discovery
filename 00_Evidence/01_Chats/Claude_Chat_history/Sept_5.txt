@@ -1,0 +1,19 @@
+sri align
+
+Aligned to the full Command Center (read the vault tree, the 09-05 morning brief, the 09-04→09-05 sprint journal through session close, the V1.1.1/V1.1.7/V1.1.8 audit records, the Transaction-Gate track files, and the 09-05 competitive/Gemini notes). Here’s where it actually stands and the one thing blocking you.
+
+State (true, not the morning brief — which is already stale by a full night’s work):
+
+The tau-bench executor pipeline got built and independently re-audited to PASS through V1.1 → V1.1.1 → V1.1.7 (0 unauthorized executions across ~3,060 adversarial cases, raw-crypto re-verified on different hardware/Python). V1.1.8 was then built (two bounded fixes) but is not independently audited — builder + one reviewer only.
+Every bit of that evidence is self-authored / synthetic (tau-bench retail corpora) plus a 25¢ Stripe sandbox refund. Processor reconciliation is SIMULATED. Production key custody not built.
+Gates unchanged: SSM 0/4 · Discovery 0/4 · zero external buyers. No real refund data has ever touched the gate — Transaction Gate F14 = INCOMPLETE (I re-confirmed the scorecards: N refunds = 0 across all four xlsx variants).
+
+The flaw, stated plainly. At session close you opened a strategic-buyer/acquisition thread (deal log, first-tier CrowdStrike → Palo Alto → Check Point → Mastercard → Visa → Adyen → Stripe). That points outreach at funded incumbents on a prototype whose entire evidence base is synthetic + a sandbox penny refund, into a lane those exact buyers already occupy natively (Stripe Agent Guardrails, AWS AgentCore/Cedar, plus Box, SandboxAQ, AuthProof, and now Coder Agent Relay). That is the venture’s named failure mode — framing on unproven ground — wearing an “acquisition” hat instead of a “sale” hat, and it collides with your own 09-02 lock: no market/buyer outreach until factual data proves the gate solves real problems. A corpdev diligence owner reads “synthetic tests + 25¢ refund + 0 external validation” and dismisses in one pass, and you’ve burned the first contact.
+
+The fix / single next blocking action: get one external datapoint before any outreach message goes out. Concretely, the shortest one: the partner 90-day real refund spreadsheet → run through the Trace Scorecard → move F14 off INCOMPLETE. That is the first evidence a buyer can’t wave off, and it’s the cheapest thing that actually moves a gate. Everything on the deal-log/outreach path is preparation, not action, until that exists.
+
+The decision only you can make (this is what unblocks the session): are the two tracks one thing or two? The tau-bench executor (V1.1.x, mechanism proven) and the Transaction Gate (F14 real-refund gate, “don’t build executor until GO”) describe the same architecture with contradictory gates. My read: the tau-bench PASS proves the mechanism is sound; F14 real data still gates any commercial/acquisition claim or deployment. Reconcile them that way and the deal log can’t truthfully describe a “current asset” until F14 clears — which is the point.
+
+Two housekeeping flags: 00_STATUS_MAP.md header still says last-updated 08-31 (5 days stale — it’s the file you read first every morning), and SRI_Discovery_Deal_Log.xlsx / 00_Claims_Lock don’t exist in the vault yet (the deal-log task is paused on that).
+
+Your call on the fork — do you want me to (a) treat F14/real-refund-data as the gate that must clear before any buyer outreach, and stand down the deal log until then, or (b) proceed building the deal log + claims-lock now and accept outreach on the synthetic evidence? I’ll flag it either way but I’m not moving on it without your word.

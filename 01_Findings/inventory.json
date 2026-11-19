@@ -1,0 +1,235 @@
+{
+  "archives": {
+    "V1_1_8_AUDIT_PACKAGE.zip": "4a9729ac92fa0542a41f4c528c9820d3e873cb96a51321ee0c62e837e95408a4",
+    "V1_1_8_evidence.zip": "b83cf4d1c45852d26321c0e33e49e8713b5cca0e818e41d971c9e5b3f6ecdf29"
+  },
+  "files": {
+    "LIMITATIONS.md": {
+      "sha256": "95aac3eafb3c74a6ea99e027e20db5b4072d6cae5e993a1b643813b6d161f387",
+      "bytes": 516
+    },
+    "MANIFEST.md": {
+      "sha256": "ef644d7ae5801bcd1aee2661591b2e34899fc25c0c2aeaa9d42bab0b9ff3d90a",
+      "bytes": 2445
+    },
+    "NATIVE_LINUX.txt": {
+      "sha256": "35a5ede359ae37dc514a9b1d34c247f866430c2861e44d6f4212e56fbfa8d63f",
+      "bytes": 116
+    },
+    "README.md": {
+      "sha256": "c446a52e33f8a69d34c2f6d753ee47e0d8a5cce167bf5a41a7cc00a0ebd4a03a",
+      "bytes": 3591
+    },
+    "REPRO.md": {
+      "sha256": "4ab29bd2b033e90315530aee7c7ad463d3f641de16b745125a142af14f7c3566",
+      "bytes": 98
+    },
+    "RUNTIME.txt": {
+      "sha256": "d2edc73e0e3b0f96e4160ea0b9108db80dd980dc2e230703333ad2834104318e",
+      "bytes": 341
+    },
+    "fixtures/test_ed25519.json": {
+      "sha256": "aef5ee39ec825064ee2d5e048495d26e0c53e1c0b94d7e253eeb36019c3d1eb1",
+      "bytes": 321
+    },
+    "harness/run_replay.py": {
+      "sha256": "0fe9577c26a968eef3f692923ac83b04d3a8d7180b7196bdd8bed07f626f7525",
+      "bytes": 26818
+    },
+    "results/cases.jsonl": {
+      "sha256": "72e3af7c446b79115783f49eedfc0aa28429e601eec5d5dabd99f4f04b2277d2",
+      "bytes": 2302157
+    },
+    "results/receipts.jsonl": {
+      "sha256": "7213139edc28aba0efed063062b889737a241c8b1c23f173439a4a7891d1ec2b",
+      "bytes": 9075142
+    },
+    "results/scoreboard.json": {
+      "sha256": "1b07be9fc98eba9aeb1d0cd3cb28cb4994630c772c825d9533fc29c3ebf81ced",
+      "bytes": 3733
+    },
+    "results/SCOREBOARD.md": {
+      "sha256": "a5e07749c4afd9ef6d463715a6477ce5e0e271e5fe58b7b965ed7c21d137944f",
+      "bytes": 187
+    },
+    "src/clock.py": {
+      "sha256": "463a0b85cae5d01045161584458b6c749d56fe1d2daba7856782ff3c8de839dc",
+      "bytes": 344
+    },
+    "src/coordinator.py": {
+      "sha256": "35430968dca0d271bd31a45b369e121495aa32b730e732f75aa0402191713775",
+      "bytes": 538
+    },
+    "src/events.py": {
+      "sha256": "257963d80b1c1bd242e8fb8a97f24a0eefae013800339899a40e288bf3ee08c3",
+      "bytes": 1048
+    },
+    "src/executor.py": {
+      "sha256": "cea5e028b16568a8adad1d2aae1b9c2cde5803d067cef81c05f9203afe769844",
+      "bytes": 9146
+    },
+    "src/factory.py": {
+      "sha256": "7aa57da7d701134ea24d19f07db5d9a4a6e138e1e84f917de7de09135701a85e",
+      "bytes": 1456
+    },
+    "src/gate.py": {
+      "sha256": "bbf007409a5e9267c463aa3d8557854778866f9093375255f4e5fa06969df808",
+      "bytes": 3833
+    },
+    "src/hashutil.py": {
+      "sha256": "25932dbb72cf1a7de38204c6e536458f6d8a74ff3cfe3266caaf5fdcbf21387b",
+      "bytes": 843
+    },
+    "src/keys.py": {
+      "sha256": "70c87e9d8caee5e086eb63f17ed7afa3b94b956238a82ea3ff846e5f3848f4f8",
+      "bytes": 2151
+    },
+    "src/ledger.py": {
+      "sha256": "da961e3c8e655287efdf7678a765b8c8264e677b3bdac96bfb62d6d8df02a8ad",
+      "bytes": 4128
+    },
+    "src/mint.py": {
+      "sha256": "4905acb61c7d288ae02fef4d06de9a606084ecadd23547e5a3f7e39eb2a258d8",
+      "bytes": 8550
+    },
+    "src/models.py": {
+      "sha256": "a823504702e3a5904e08aee58b036105f9c427cb0d3d6c4fa3993e796a6a0313",
+      "bytes": 3594
+    },
+    "src/revoke.py": {
+      "sha256": "3d60ea1d32e85bc1db127dd6107f62af8f1842e50a4a4b3201f98bfd1d595b39",
+      "bytes": 1303
+    },
+    "src/store.py": {
+      "sha256": "4a6d81bd0eed03c82a373803cd0e1f83cce279450e22abb4aa2ab24716c694aa",
+      "bytes": 1098
+    },
+    "src/verifier.py": {
+      "sha256": "0c6333677f4ec9aa7994c010987431b4a174dd8fe47f178ca7b6116d09acd341",
+      "bytes": 11929
+    },
+    "tests/test_attacks.py": {
+      "sha256": "dd15204b53352f3dd9581a900fb01dfee8282bf4bcbddbde1b5286f5e5cbeec2",
+      "bytes": 18150
+    },
+    "tests/test_receipt_matrix.py": {
+      "sha256": "ec641122a5a615ab86469de7fbe8178722f357ada6fc16ed1f3a5f4066fe9be5",
+      "bytes": 2362
+    }
+  },
+  "manifest_checks": [
+    {
+      "path": "LIMITATIONS.md",
+      "match": true
+    },
+    {
+      "path": "NATIVE_LINUX.txt",
+      "match": true
+    },
+    {
+      "path": "README.md",
+      "match": true
+    },
+    {
+      "path": "REPRO.md",
+      "match": true
+    },
+    {
+      "path": "RUNTIME.txt",
+      "match": true
+    },
+    {
+      "path": "fixtures/test_ed25519.json",
+      "match": true
+    },
+    {
+      "path": "harness/run_replay.py",
+      "match": true
+    },
+    {
+      "path": "results/SCOREBOARD.md",
+      "match": true
+    },
+    {
+      "path": "results/cases.jsonl",
+      "match": true
+    },
+    {
+      "path": "results/receipts.jsonl",
+      "match": true
+    },
+    {
+      "path": "results/scoreboard.json",
+      "match": true
+    },
+    {
+      "path": "src/clock.py",
+      "match": true
+    },
+    {
+      "path": "src/coordinator.py",
+      "match": true
+    },
+    {
+      "path": "src/events.py",
+      "match": true
+    },
+    {
+      "path": "src/executor.py",
+      "match": true
+    },
+    {
+      "path": "src/factory.py",
+      "match": true
+    },
+    {
+      "path": "src/gate.py",
+      "match": true
+    },
+    {
+      "path": "src/hashutil.py",
+      "match": true
+    },
+    {
+      "path": "src/keys.py",
+      "match": true
+    },
+    {
+      "path": "src/ledger.py",
+      "match": true
+    },
+    {
+      "path": "src/mint.py",
+      "match": true
+    },
+    {
+      "path": "src/models.py",
+      "match": true
+    },
+    {
+      "path": "src/revoke.py",
+      "match": true
+    },
+    {
+      "path": "src/store.py",
+      "match": true
+    },
+    {
+      "path": "src/verifier.py",
+      "match": true
+    },
+    {
+      "path": "tests/test_attacks.py",
+      "match": true
+    },
+    {
+      "path": "tests/test_receipt_matrix.py",
+      "match": true
+    }
+  ],
+  "prior_v117_modified_files": [],
+  "source_changes_vs_v117": [
+    "src/executor.py",
+    "src/verifier.py"
+  ]
+}

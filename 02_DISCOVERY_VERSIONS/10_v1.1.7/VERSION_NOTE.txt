@@ -1,0 +1,1 @@
+v1.1.7: stricter denial receipts, boolean type checks, required keys, and the table-driven allow/deny receipt mutation matrix. SHA-256 of V1_1_7_AUDIT_PACKAGE.zip: 7defefba542a5e2f54f6c0ebaea8d1a1458e7c2a1beff366b6632926b7ba5e69

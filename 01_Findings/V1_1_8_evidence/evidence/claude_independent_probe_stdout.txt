@@ -1,0 +1,41 @@
+OK   gate.commit produced ALLOW commit for valid req 
+OK   valid execution actually executed 
+OK   genuine ALLOW receipt verifies ok 
+OK   commit=None denial: executed is False 
+OK   commit=None denial: reason is DIRECT_EXECUTOR_BYPASS 
+OK   commit=None denial: commit_signature is None on genuine receipt 
+OK   commit=None denial: issuer_key_id is None on genuine receipt 
+OK   genuine no-commit denial verifies ok (baseline before tamper) 
+OK   V1.1.8 FIX 1 CONFIRMED: fabricated commit_signature='deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef' on no-commit denial now REJECTED 
+OK   V1.1.8 FIX 1 CONFIRMED: fabricated issuer_key_id='attacker-key' on no-commit denial now REJECTED 
+OK   spec=None denial: executed is False 
+OK   spec=None denial: reason is MISSING_AUTHORITY_SPEC 
+OK   spec=None denial: authority_id is None 
+OK   spec=None denial: authorized_amount_or_ceiling is None 
+OK   genuine neither-denial verifies ok (baseline before tamper) 
+OK   V1.1.8 FIX 1 CONFIRMED: fabricated authority_id='attacker-authority' on neither-denial now REJECTED (ok=False) 
+OK   V1.1.8 FIX 1 CONFIRMED: fabricated authorized_amount_or_ceiling=999999.0 on neither-denial now REJECTED (ok=False) 
+OK   V1.1.8 FIX 1 CONFIRMED: fabricated authorized_destination=['attacker_dest'] on neither-denial now REJECTED (ok=False) 
+OK   V1.1.8 FIX 1 CONFIRMED: fabricated authorized_payment_identity='attacker_pm' on neither-denial now REJECTED (ok=False) 
+OK   V1.1.8 FIX 1 CONFIRMED: fabricated spec_expires_at=999999.0 on neither-denial now REJECTED (ok=False) 
+OK   V1.1.8 FIX 1 CONFIRMED: fabricated commit_signature='cafebabecafebabecafebabecafebabecafebabecafebabecafebabecafebabe' on neither-denial now REJECTED (ok=False) 
+OK   V1.1.8 FIX 1 CONFIRMED: fabricated issuer_key_id='attacker-key-2' on neither-denial now REJECTED (ok=False) 
+OK   Even with fabricated summary fields, executed field itself was never flipped to True 
+OK   The underlying signed execution_event dict was left byte-identical across all fabrication attempts (only top-level receipt fields were mutated) 
+OK   REPRODUCED: Executor can be constructed with coordinator=None (no error) 
+OK   require_coordinated() DOES catch the uncoordinated executor when explicitly called 
+OK   V1.1.8 FIX 2 CONFIRMED: uncoordinated executor now DENIES instead of silently executing 
+OK   V1.1.8 FIX 2: denial reason is MISSING_COORDINATOR 
+OK   V1.1.8 FIX 2: rejected commit was NOT consumed by the ledger 
+OK   V1.1.8 FIX 2 CONFIRMED: mismatched-coordinator executor also DENIES 
+OK   V1.1.8 FIX 2: denial reason is MISMATCHED_COORDINATOR 
+OK   V1.1.8 FIX 2: still not consumed after the mismatched attempt 
+OK   V1.1.8 FIX 2: the same commit, run through the correctly coordinated executor, EXECUTES 
+OK   V1.1.8 FIX 2: a second attempt through the coordinated executor now correctly replay-denies 
+OK   verifier.py does NOT import CommitGuard.decide or Executor.execute (no circularity via re-running system-under-test) 
+OK   Genuine commit signature independently verifies under RAW cryptography.Ed25519PublicKey.verify (not just keys.verify_signature) 
+OK   Tampered payload correctly REJECTED by raw cryptography (signature does not verify over changed bytes) 
+
+=== SUMMARY ===
+PASS: 37
+FAIL: 0

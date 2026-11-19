@@ -1,0 +1,1 @@
+v1.1.8 (current): two bounded fixes on v1.1.7, including denial receipts with an absent spec or commit must leave those fields null. SHA-256 of V1_1_8_AUDIT_PACKAGE.zip: 4a9729ac92fa0542a41f4c528c9820d3e873cb96a51321ee0c62e837e95408a4

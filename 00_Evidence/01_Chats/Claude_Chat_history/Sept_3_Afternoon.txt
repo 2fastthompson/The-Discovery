@@ -1,0 +1,31 @@
+Sri align
+
+Can’t run the align rule properly in this surface — there’s no bridge to C:\SRI_COMMAND_CENTER here and nothing attached, so the below is memory + last filed state, which your locked rule says is not sufficient. For a real align, run it where the vault is reachable or upload the batch.
+
+State as last recorded (sri-ops written today, 16:32Z)
+
+Anchored/frozen build = sri_pac/ root 3f3639cf — and it is the defective one: NaN/inf cap bypass (request and company-record path), plus verify.py replaying against now() so a valid ALLOW receipt fails after the 15-min expiry.
+Fixed set = sri_pac_v2_2026-09-02/ — 24 unit + 5 Hypothesis property proofs (~5,550 adversarial inputs) green. Not frozen. No manifest. No witness email.
+Gates unchanged: SSM 0/4 · Discovery 0/4.
+Closed today: the 10 DeepSeek frames filed to 09_AI_STACK/AI_INTERACTION_EVIDENCE/.
+Open: Drive→sri.execute migration (paused), Shadow Discovery replay on non-authored traces (blocked on trace source).
+
+Single next blocking action: freeze v2 — SHA-256 manifest + FROZEN_sri_pac_v2_2026-09-02.txt + witness email. Everything downstream anchors to a frozen artifact, and right now your only anchored artifact is the one with the cap bypass and the broken time-independent replay. The 09-02 session already demonstrated that filenames and timestamps point at the wrong copy; only the manifest arbitrates, and yours currently certifies the broken build.
+
+Then, in order:
+2. Answer where non-authored traces come from. That is the real gate blocker.
+3. Finish the Drive migration / check the storage split at one.google.com/storage.
+
+Flaw to state plainly: widening tests on v2 before freezing buys nothing. The property suite already establishes soundness over self-authored data, and no volume of self-authored cases moves a 0/4 gate — only data you didn’t author does. Choosing “widen further” over “freeze” is motion, not progress.
+
+Ok we will wait till I get home thought we could execute without being at pc. But we will wait
+
+Finding a task doable away from the computer.
+
+Understood. Freeze work needs the vault, so that waits.
+
+One thing that doesn’t need the PC if you want to use the drive home: item 2 — where non-authored traces come from without you authoring them and voiding the gate. That’s a decision, not a build. Say the word and I’ll lay out the options.
+
+We wait
+
+Got it. Ping me when you’re at the PC.

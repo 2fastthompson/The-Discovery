@@ -1,0 +1,96 @@
+You're right about crypto commoditization and wrong about how easy "negative knowledge" is to sell. Let me separate the valid technical insight from the commercial fantasy.
+
+---
+
+## Where You're Correct
+
+**Crypto is infrastructure, not moat.** Google Confidential VM, Azure CC, AWS Nitro Enclaves, NVIDIA TEE—these are table stakes. You're buying attestation from Intel/AMD/ARM, not building it. The RATS architecture means standardized remote attestation is coming to every cloud workload by 2026.
+
+**Bitemporal is crowded.** XTDB, Datomic, TerminusDB, and now TensorDB all reconstruct "what the database knew." If Discovery is just "database with audit logs," it dies.
+
+**The epistemic boundary is the harder problem.** You're correct that proving *S contained everything legitimately available* is vastly harder than proving *S wasn't tampered with after capture*. The latter is hashing; the former requires instrumentation, ontology, and epistemic logic that barely exists.
+
+---
+
+## Where You're Wrong
+
+**"Negative Knowledge" is nearly impossible to implement at scale.** Your taxonomy looks clean in a text diagram:
+
+```
+Source B: available = TRUE, observed = FALSE
+Source C: available = FALSE, reason = TIMEOUT
+```
+
+In production, this requires:
+- Complete pre-registration of every possible data source (APIs, sensors, human inputs, cached values)
+- Instrumentation at every potential access point that can distinguish "not queried" from "queried and returned null"
+- Handling of dynamic authorization (token expiry mid-decision)
+- Ontological agreement on what constitutes a "source" (is each field a source? each table? each API endpoint?)
+
+Your "bounded completeness" retreats to *Given a formally specified decision boundary B*—but formal specification of B is itself 80% of the work. Customers can't formalize their decision boundaries. They have spaghetti microservices and shadow IT. Discovery would spend 18 months doing enterprise architecture consulting before capturing a single frozen state.
+
+**The red-team trial you propose is a trap.** Your scenario with 20 sources (8 used, 3 ignored, 2 stale, etc.) assumes omniscient knowledge of the ground truth. In reality, Discovery and the competing systems would disagree on what sources *existed* at T0. You can't adjudicate the test without a gold standard that doesn't exist. The trial becomes a philosophical dispute, not a product demo.
+
+**Buyers don't want epistemic rigor; they want liability transfer.** A Chief Risk Officer doesn't care about "capture-gap accounting." They care that when the SEC subpoenas records, Discovery produces a PDF with a cryptographic signature that the General Counsel can hand to regulators. Technical correctness is secondary to defensibility theater.
+
+---
+
+## Assessment of Your Proposed Architecture
+
+Your stack is technically correct but commercially backwards:
+
+```
+Discovery Frozen State
+↓
+Epistemic-state requirements [HARD, CUSTOM]
+↓
+Hindsight isolation [MEDIUM]
+↓
+Integrity/proof layer [EASY, COMMODITY]
+↓
+Performance modules [EASY, CUSTOMER-SPECIFIC]
+```
+
+You've put the hardest, most uncertain layer (epistemic requirements) at the foundation. This means:
+- Every deployment requires custom ontology work
+- Discovery becomes a consulting company, not a product company
+- You can't demo without customer's instrumentation
+
+The correct commercial architecture inverts this:
+
+```
+Integrity/proof layer [LEAD WITH THIS—commodity but sellable]
+↓
+Hindsight isolation [TECHNICAL MOAT—hard to replicate]
+↓
+Epistemic-state requirements [EXPANSION REVENUE—professional services]
+↓
+Performance modules [LAND-AND-EXPAND]
+```
+
+Sell the vault first (proven, understandable, checkable). Use vault revenue to fund the epistemic instrumentation that makes Discovery actually defensible. Don't lead with the PhD thesis; lead with the audit trail.
+
+---
+
+## Revised Recommendation
+
+**Don't adopt "Certified Epistemic Completeness" or "Negative Knowledge Certification" as primary differentiators.** They're technically ambitious, commercially toxic, and implementationally naive.
+
+**Do adopt this positioning:**
+
+> **"Discovery is the only decision-audit system that cryptographically binds the evaluation environment to the decision-time evidence, preventing even privileged administrators from contaminating retrospective analysis."**
+
+This is weaker technically than your proposal but stronger commercially. It:
+- Acknowledges crypto commoditization ("cryptographically binds" is standard)
+- Claims differentiation on *evaluation environment isolation* (the "hindsight isolation" layer)
+- Avoids claiming omniscience about "negative knowledge"
+- Can be demonstrated in 10 minutes (show evaluator hitting a wall)
+
+**Then build the epistemic rigor as the *real* moat behind the scenes.** Use the vault sales to fund development of:
+- Automatic source detection (network traffic analysis to discover what *could* have been queried)
+- ML-based "availability inference" (predicting what was likely available based on system telemetry)
+- Formal methods for bounded completeness (partner with academic verification teams)
+
+**Run the red-team trial, but internally.** Don't make it public until Discovery wins decisively. If existing tools pass 70% of the test, you have no product. If they fail at "capture-gap accounting" and Discovery passes, you've got a technical paper, not a commercial strategy.
+
+**Final call:** Your instinct to separate "epistemic property" from "cryptographic mechanism" is correct. Your proposed hierarchy is architecturally sound but commercially suicidal. Invert the stack: sell the vault, build the epistemics, prove the differentiation in paid pilots, not philosophical thought experiments.

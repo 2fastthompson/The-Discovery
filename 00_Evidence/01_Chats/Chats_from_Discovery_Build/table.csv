@@ -1,0 +1,16 @@
+Layer,Capability,When delivered
+Land (v1),Hindsight Isolation + Integrity Layer,First release
+,- Freeze decision context at time T,
+,- Cryptographic integrity (hashes + signatures),
+,- Evaluation environment that cannot see post-T data,
+,"- Exportable, review-ready package",
+Expand (v1.5–v2),Epistemic Accounting,After land + instrumentation
+,- Observed vs available-but-unobserved,
+,- Unavailable / timed-out / permission-denied sources,
+,- Explicit capture gaps,
+,- Temporal validity of data,
+Modules,Domain-specific evaluation,Attachable from day one
+,- Evidence sufficiency,
+,- Fair lending / model risk checks,
+,- Claims severity (SSM),
+,- Clinical / TEVV / compliance modules,

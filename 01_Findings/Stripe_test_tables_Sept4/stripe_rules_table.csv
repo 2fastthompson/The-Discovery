@@ -1,0 +1,9 @@
+Rule,How
+Retrieved text is not authority,"Spec minted from policy + order facts, not from email body"
+Empty authorized set,Grok is not called. Fixed “I don’t know.”
+Live answer,Must contain [chunk_id]. Else cited fallback.
+Dest / amount / tool,Cannot widen the spec. Mutation recorded; refund still original card if retry succeeds
+NaN / Inf / ≤0,DENY / no Stripe
+Hard ceiling,"$500 (50,000¢) even if spec is wrong"
+Live Stripe key,Blocked on the running intercept
+Trust,sourceType / trust / labelVerified / groups. No regex on body

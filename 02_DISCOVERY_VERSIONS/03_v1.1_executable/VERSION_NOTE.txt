@@ -1,0 +1,1 @@
+v1.1: execution only with a ValidatedCommit binding principal, action, amount, destination, payment identity, expiry and nonce; rejects mutation, stale state and replay. SHA-256 of V1_1_AUDIT_PACKAGE_EXECUTABLE.zip: 398111b792543dbd6eb584f04c2ae26ce556e8d758d397cf38e6d79ea1bd9768

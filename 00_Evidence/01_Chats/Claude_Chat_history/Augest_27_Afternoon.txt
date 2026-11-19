@@ -1,0 +1,95 @@
+align with sri
+
+Filing it — verbatim, so provenance stays clean (no AI re-serialization; that’s the lesson from the four-question file). Then my custody note goes in a clearly separated block so your words stay yours.
+
+Filed verbatim at 07_RESEARCH_INTEL\SRI_DISCOVERY\2026-08-27_Discovery_Run_Where_This_Goes.md (SHA-256 6a78c5e8…41e06), your words untouched, my custody note fenced off below them. Now the journal entry and the record.
+
+Hold on — another surface already filed this run. The journal references 2026-08-27_Discovery_Run_On_Direction_Question.md + a custody file, which means my _Where_This_Goes.md is a duplicate. That’s the exact vault-clutter/provenance-ambiguity you fight. Let me check before I leave two competing verbatim copies.
+
+Confirmed — mine is redundant. The canonical _On_Direction_Question.md (2:01) already holds your verbatim run, with _Custody_and_Read.md beside it. Removing my duplicate so there’s one source of truth.
+
+It’s fully documented — the canonical run and its custody note were already filed by a parallel surface; the journal, sidecar, and Grok prompt are all logged. My duplicate is parked in SRI_DISCOVERY\_to_delete\ (delete that folder from Windows when convenient — the bridge can’t).
+
+Let me confirm the existing custody note already carries the honest limits, so nothing’s lost.
+
+The existing custody note already carries every honest limit — self-referential (the Finding 001 pattern), zero buyers, real gate unrun. Nothing lost. Everything’s on the record. Here’s where it stands and my thinking on it:
+
+Documented (single source of truth, no dupes):
+
+Your run, verbatim → 2026-08-27_Discovery_Run_On_Direction_Question.md (sha b1de19ea…)
+Custody read beside it → 2026-08-27_Discovery_Run_Custody_and_Read.md
+Sidecar → wrap_agent_experiment\discovery_receipt.py
+Session journal updated. My duplicate parked in _to_delete\.
+My thought-through read — three things worth pulling forward that aren’t yet in the direction doc:
+
+The sharpest line you wrote is the product definition: “if they want the file again next month, that is the product.” That’s your willingness-to-pay test. It means the one-shot service run isn’t a lesser option — it’s the instrument that generates the WTP signal. Sell the file once, see if they come back. Retention is the validation, not a pitch.
+“Cash before the package is pretty” is your fastest first dollar — and it de-risks everything downstream. You don’t need the sidecar packaged for a stranger before money changes hands; you run it on their bot yourself and hand them the file + the flip. Do that on one real bot before touching packaging.
+Scope-guard on item 7: “TPAs, MGAs, internal labs” can quietly walk you back toward the carrier world you parked. They qualify only as bot-owners — someone who already shipped a policy/claims/refund bot — never as a carrier re-entry. Keep that line hard.
+The custody note is right about the one thing that matters: none of this — eight coherent bullets, a self-run receipt, a confirmed direction — moves a gate. The only thing that counts is still unrun: discovery_receipt.py on a real third-party bot. Your own item 3 says it — “if you cannot list their index, stop.”
+
+Want me to append those three reads to the direction doc’s custody section, or leave them in chat? And are you running the sidecar now — I’ll verify the output the moment you paste it.
+
+put these findings in vault-Yes — this is correct as a **Discovery receipt**, with one important caveat: the “Forced run” is not a second retrieval result. It is a manual full-pile reconstruction. That’s fine for illustrating the contrast, but it should not be presented as evidence that retrieval has improved or that the system now retrieves 3–8 on its own.
+### What the run correctly demonstrates
+- It separates **available vs retrieved**.
+- It records **what was missed and why**.
+- It compares the **observed-only answer** to the **full-pile answer**.
+- It shows the miss is **material**, not cosmetic.
+- It proves the value statement: a skip matters when it changes the answer.
+The observed-only answer is not false. It explains the mechanism. But it does not answer the actual question: *where do we go, what is the value, what options do we create, what does it open for SRI?* That is a classic retrieval failure — the retriever matched the topic “Discovery,” not the decision intent.
+### Insight on the product direction
+The direction in items 3–8 is coherent and disciplined:
+- Prove it on a bot you didn’t write.
+- Package the receipt as a portable sidecar.
+- Let them keep the file.
+- Do not build a platform, dashboard, or wall first.
+- Attach SRI as the first paid module: **insurance reading of the miss**.
+The strongest line is:
+
+Skip is only valuable if it changes the answer.
+
+That keeps Discovery from becoming a noisy inventory of unimportant misses.
+The second strongest line is:
+
+SRI becomes the insurance reading of the miss.
+
+That gives SRI a wedge that is not a carrier cold-call. The buyer is someone who already shipped a policy/claims/coverage/refund bot. That is a much better beachhead than governance.
+### Caveat: make the receipt more forensic
+For this to hold up outside an internal note, the receipt should include retrieval metadata:
+- query used
+- retriever/top-k/model
+- scores or ranks
+- cutoff
+- index hash or version
+- retrieved ids
+Otherwise a skeptic can say you simply declared items missed. The line IN_INDEX_NOT_RETRIEVED is enough for the current example, but for a real proof pack it needs supporting evidence.
+### One risk to keep in view
+The next-test gate is:
+
+If you cannot list their index, stop. That is the product risk.
+
+That is correct, but you should define whether “list their index” can be satisfied by a retrieval log, an index dump, or API access. Many real RAG bots do not cleanly expose their full index. If that becomes a recurring blocker, the product may need to work from **provided retrieval logs** rather than live index access.
+### Bottom line
+The run is correct as a diagnostic artifact. It would be misleading only if the forced run were treated as a real retrieval result. The product logic is sound: sell the receipt, not the platform; make SRI the paid insurance reading of a material skip.
+
+Filing the review, and this one has a caveat that’s directly actionable on the sidecar you’re about to run — so I’m doing both: filing the findings verbatim and hardening discovery_receipt.py to emit the forensic fields it asks for, so your first real run produces a defensible receipt, not one a skeptic can wave off.
+
+Both filed, code hardened, journal + record updated. Net:
+
+Done
+
+Review filed verbatim → 2026-08-27_Discovery_Run_Review_and_Forensic_Caveats.md (sha dc105945…)
+discovery_receipt.py → schema v0.1: now emits query, retriever/top-k/embedding, per-hit ranks + L2 distances, retrieved chunk ids, cutoff, and an index_hash. --force-include self-labels as a manual probe. Your first real run now produces a proof-pack object, not a declaration.
+The one thing in that review that actually moves the plan — bigger than a code tweak: the reviewer is right that “many real RAG bots do not cleanly expose their full index.” Follow that to its end and it reshapes the product:
+
+If live enumeration is usually impossible, then rag-bot-chroma (where you can enumerate) isn’t just “step 1 of 2” — it’s a best-case rig that flatters the product. The real-world default is you get handed a retrieval log, not a store you can list.
+That means your actual gate isn’t “can I enumerate their index” — it’s “can I reconstruct available from an artifact the buyer already has (a log/dump), and still name a material miss?” If yes, the product works on bots you can’t touch. If no, you’re limited to open, self-hostable stores — a much smaller market.
+So the sharper next test isn’t only the enumerate-live path. It’s proving the receipt from provided logs. Want me to add a --from-logs mode to the sidecar — build the receipt from a handed-over retrieval log instead of a live store — so you can test the path that actually decides the market size, not just the flattering one? That’s a ~20-line addition and it’s the real product question staring back at you from this review.
+
+Either way, the live-store run on rag-bot-chroma is still worth doing first to confirm mechanics. Paste me its output when you run it.
+
+
+Permission mode is set to Auto. Claude runs on its own and pauses if anything looks unsafe. This includes using your connectors and Claude in Chrome, unless you turn them off. Learn more
+
+
+Claude is AI and can make mistakes.

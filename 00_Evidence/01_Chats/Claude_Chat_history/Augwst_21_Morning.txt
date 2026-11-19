@@ -1,0 +1,85 @@
+align with sri
+
+Aligned as of 2026-08-20 (SAP recovery/custody): insurer-sales is dead, SSM held as assets under the two-path framing (A=APD, B=possible decision-intelligence), DH-02.1 frozen, gates SSM 0/4 · Discovery 0/4. Map is current (newer than the newest journal — not stale).
+
+Single next action: you confirm whether a four-question prompt predates tonight’s Claude §E (e.g. an earlier ChatGPT-authored version on your phone/Downloads). If none exists → authorize freezing the 03_CANDIDATE four-question layer as canonical, then build the ≥32-case held-out corpus. Do not run the two-arm A/B until the canonical is frozen. The two zero-selling proof moves (Discovery falsification A/B · multi-source file gather via the friend’s shop) stand in parallel.
+
+Correct? One line back and I move.
+
+SRI_DH02_1_RECONSTRUCTED_FOUR_QUESTION_LAYER_EXECUTION_PACKAGE_20260820.md
+SRI_DH02_1_RECONSTRUCTED_FOUR_QUESTION_LAYER_EXECUTION_PACKAGE
+_20260820
+.md
+MD
+Claude, take over as SRI custodian, orchestrator, and secondary adversarial reviewer for the reconstructed four-question-layer falsification test.
+We discovered a genuine artifact-custody failure:
+
+The August 15 Comprehensive Working Record exists.
+The August 15 Internal-Use Operating Overview exists.
+Neither contains the canonical four-question external layer.
+Later records refer to the layer, but its exact original wording is absent from the accessible audit record.
+There is no evidence the file was stolen or intentionally removed. The supported finding is that the exact text was not properly saved, transferred, or verified.
+Shawn has now authorized reconstruction so the work can continue.
+ChatGPT created and preserved:
+The new lineage is:
+SRI Four-Question External Layer — Reconstructed v1.0
+It must never be represented as the recovered original. Preserve the missing original as an unresolved custody gap. No validation or performance credit transfers from the missing version.
+The locked reconstructed questions are:
+
+What specific outcome or state is the decision intended to produce?
+What relevant evidence is verified, what is assumed, and what remains unknown at T0?
+What necessary condition or dependency could prevent the intended outcome, and was it identifiable at T0?
+What should happen next if the decision is sound, and what observable threshold would require the decision to be reconsidered?
+These questions are an external layer only. Frozen DH-02.1 remains completely unchanged and continues to adjudicate Knowability, Evidence–Decision Alignment, exclusion, and trajectory.
+Your required actions:
+
+Place the attached execution package in the correct SRI vault location.
+Record its exact filename, version, date, and hash.
+Update the Human–AI Development Journal and SAP Session Journal.
+Record the original-layer custody failure separately; do not overwrite or conceal it.
+Verify the authoritative frozen DH-02.1 artifact and its hash.
+Build a new blind boundary-discrimination case set meeting the execution package requirements.
+Seal the reference key separately.
+Establish two isolated arms:
+Arm A: frozen DH-02.1 only.
+Arm B: frozen DH-02.1 plus the exact four locked questions.
+Give Grok the adversarial scorer prompt contained in the package.
+Prevent either arm from seeing the other arm’s output or the reference key before answers lock.
+Calculate case-level errors corrected, errors introduced, net correction, abstention calibration, hindsight leakage, false certainty, authority/evidence conflation, deterministic-rule confusion, unsupported trajectory, and added burden.
+Return the complete package, hashes, case set, sealed key, scorer outputs, grading, journal updates, and final KEEP / PARTIAL-REVISE / KILL / INDETERMINATE disposition.
+Do not claim market validation, commercial value, differentiation, or product readiness. Synthetic and internal testing remain internal evidence only.
+Before executing, report whether every required artifact is physically present and verified. Do not merely refer to an artifact without confirming possession of its exact contents.
+
+Received. Before I touch the vault or build anything, I’m running the possession/verification audit you required — locating the authoritative frozen DH-02.1 and confirming I hold its exact bytes, not just a reference to it. Let me set up tracking and find the canonical artifacts.
+
+Possession audit complete. Reporting before any execution, as you required. I confirmed exact contents — not just references.
+
+Possession & verification status
+✅ HELD + INTEGRITY-VERIFIED — Frozen DH-02.1. The authoritative frozen construct is at 07_RESEARCH_INTEL/SSM_DISCOVERY_MODE/2026-08-16_LOCK/Vault_Markdown/02_DH-02_1_FROZEN_CONSTRUCT.md. I read its exact bytes. Computed SHA256 = d865021f…f058e92a1, which matches the recorded lock manifest exactly — unchanged since the 08-16 freeze. It contains the complete axis definitions the test needs (K0–K3, A/D, W/P/C/S + INDETERMINATE, deterministic-compliance exclusion, hindsight + outcome-prediction prohibitions, version rule). This is the artifact whose omission caused the earlier Tranche-3 instrument defect; it is present in full this time.
+
+✅ HELD — Execution package (your upload) and ✅ the Grok scorer prompt + Claude custodian prompt (its §9/§10). Read in full. Not yet filed to the vault.
+
+⬜ DOES NOT EXIST YET — must be built: the new blind boundary case set, the sealed reference key, and the arm-assignment/randomization record. The 05_…AB_TEST_SHELL file is a shell only — no cases, no key.
+
+⚠️ Two custody problems I have to put in front of you before building:
+
+1. The designated “frozen base” slot in the 08-18 closeout is empty. 2026-08-18_CLOSEOUT/01_FROZEN_BASE/DH-02.1_FROZEN/ holds only a NOTE_PENDING.md stub — the real frozen text was never copied there. Not a loss (verified copy exists in the 08-16 lock), but the “official” frozen slot is hollow. Fix: copy the hash-verified construct into that slot with a provenance note. Cheap, do it as part of custody.
+
+2. The locked “Reconstructed v1.0” four questions are NOT identical to the in-vault §E candidate — two substantive drifts, and one cuts the wrong way. Comparing your package’s §2 to 03_CANONICAL_4Q_CANDIDATE:
+
+Q2 dropped “unknowable.” §E separates unknown from unknowable; v1.0 collapses to verified/assumed/unknown. That distinction is exactly what separates K0 from K3.
+Q3 dropped “and were they actually evaluated,” and reframed to “could prevent the intended outcome.” The §E version’s “were the necessary preconditions evaluated” is what sharpens Alignment (looked-at vs. mattered-and-knowable). The v1.0 “what could prevent the outcome” is failure-framed — which is precisely the hindsight-reintroduction channel the last SAP flagged as the central danger. The reconstruction quietly made the layer more hindsight-prone at its riskiest question.
+I follow your custody rule either way (label reconstructed, no credit transfer). But freezing v1.0 as-written means testing a slightly weaker, more leak-prone instrument than the one your own vault already holds verbatim.
+
+Plus one validity flaw I won’t build around silently: if I author both the cases and the sealed reference key, the experiment measures “does Arm B agree with Claude’s key more than Arm A” — not “does Arm B reduce real errors.” A single author can bias the key toward the arm they expect to win. Grok scoring both arms doesn’t fix that; the key itself needs an independent check. And I can’t drive Grok — I build sealed, isolated runnable packets and you run them; I grade after your locked outputs come back.
+
+Three decisions gate the build:
+
+Paused. Nothing filed, nothing built — vault untouched.
+
+When you’re back, the whole build unblocks on three one-word answers: reference key (draft-then-ChatGPT-ratifies?), 4Q wording (reconcile-then-freeze?), case set (~32?). My recommendations stand on all three. Fire them and I’ll secure custody (file the package + hashes, patch the empty frozen slot, log the custody gap + the v1.0 wording drift) and start the case set in the same pass.
+
+Go do your errands.
+
+
+Permission mode is set to Auto. Claude runs on its own and pauses if anything looks unsafe. This includes using your connectors and Claude in Chrome, unless yo

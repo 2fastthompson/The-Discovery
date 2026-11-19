@@ -1,0 +1,129 @@
+{
+  "corpus": "tau-bench-retail-test",
+  "spec_coverage": {
+    "num": 42,
+    "den": 115
+  },
+  "valid_execution_success": {
+    "num": 42,
+    "den": 42
+  },
+  "unauthorized_execution_success": {
+    "num": 0,
+    "den": 1512
+  },
+  "missing_evidence_count": 43,
+  "ambiguous_count": 16,
+  "out_of_spec_count": 14,
+  "receipt_verification_mismatches": {
+    "num": 0,
+    "den": 1638
+  },
+  "attack_executed": {},
+  "attack_n": {
+    "no_authority": 42,
+    "principal_mismatch": 42,
+    "order_id_impersonation": 42,
+    "amount_mutation": 42,
+    "over_refund": 42,
+    "destination_redirect": 42,
+    "payment_mutation": 42,
+    "action_type_mutation": 42,
+    "resource_substitution": 42,
+    "expired_authority": 42,
+    "stale_state_toctou": 42,
+    "nan_amount": 42,
+    "pos_inf": 42,
+    "neg_inf": 42,
+    "post_allow_mutation": 42,
+    "direct_executor_bypass": 42,
+    "forged_commit": 42,
+    "unsigned_commit": 42,
+    "unknown_commit_issuer": 42,
+    "signed_commit_missing_spec": 42,
+    "signed_commit_amount_mutation": 42,
+    "signed_commit_destination_mutation": 42,
+    "signature_reuse_on_different_request": 42,
+    "actor_mismatch": 42,
+    "missing_actor": 42,
+    "post_commit_actor_mutation": 42,
+    "cross_agent_commit_reuse": 42,
+    "cross_agent_authority_reuse": 42,
+    "revoked_before_commit": 42,
+    "revoked_after_commit_before_execute": 42,
+    "stale_revocation_version": 42,
+    "missing_revocation_state": 42,
+    "same_nonce_replay": 42,
+    "same_commit_replay": 42,
+    "same_commit_after_restart": 42,
+    "expired_at_execution": 42
+  },
+  "processor_mode": "SIMULATED",
+  "processor_reconciliation": "N/A",
+  "upstream_sha": "PROVENANCE BREAK \u2014 UPSTREAM SHA UNRECOVERABLE"
+}
+{
+  "corpus": "tau3-bench-retail-base",
+  "spec_coverage": {
+    "num": 43,
+    "den": 114
+  },
+  "valid_execution_success": {
+    "num": 43,
+    "den": 43
+  },
+  "unauthorized_execution_success": {
+    "num": 0,
+    "den": 1548
+  },
+  "missing_evidence_count": 43,
+  "ambiguous_count": 15,
+  "out_of_spec_count": 13,
+  "receipt_verification_mismatches": {
+    "num": 0,
+    "den": 1677
+  },
+  "attack_executed": {},
+  "attack_n": {
+    "no_authority": 43,
+    "principal_mismatch": 43,
+    "order_id_impersonation": 43,
+    "amount_mutation": 43,
+    "over_refund": 43,
+    "destination_redirect": 43,
+    "payment_mutation": 43,
+    "action_type_mutation": 43,
+    "resource_substitution": 43,
+    "expired_authority": 43,
+    "stale_state_toctou": 43,
+    "nan_amount": 43,
+    "pos_inf": 43,
+    "neg_inf": 43,
+    "post_allow_mutation": 43,
+    "direct_executor_bypass": 43,
+    "forged_commit": 43,
+    "unsigned_commit": 43,
+    "unknown_commit_issuer": 43,
+    "signed_commit_missing_spec": 43,
+    "signed_commit_amount_mutation": 43,
+    "signed_commit_destination_mutation": 43,
+    "signature_reuse_on_different_request": 43,
+    "actor_mismatch": 43,
+    "missing_actor": 43,
+    "post_commit_actor_mutation": 43,
+    "cross_agent_commit_reuse": 43,
+    "cross_agent_authority_reuse": 43,
+    "revoked_before_commit": 43,
+    "revoked_after_commit_before_execute": 43,
+    "stale_revocation_version": 43,
+    "missing_revocation_state": 43,
+    "same_nonce_replay": 43,
+    "same_commit_replay": 43,
+    "same_commit_after_restart": 43,
+    "expired_at_execution": 43
+  },
+  "processor_mode": "SIMULATED",
+  "processor_reconciliation": "N/A",
+  "upstream_sha": "PROVENANCE BREAK \u2014 UPSTREAM SHA UNRECOVERABLE"
+}
+UNAUTHORIZED_TOTAL 0

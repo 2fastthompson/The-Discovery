@@ -1,0 +1,241 @@
+GHEST PRIORITY
+1) Flaw Analysis
+
+Core thesis is valid. Exploit story is technically sloppy.
+You collapse four different identities:
+KB ingestion/service role.
+Bedrock Agent execution role.
+EKS workload role/node credentials.
+Human/API caller.
+Prompt injection does not automatically acquire the KB service role’s s3:GetObject authority.
+Current Bedrock Managed Knowledge Bases support document-level ACL-aware retrieval. AWS explicitly warns that ACL awareness itself is not authentication, which is a better argument than claiming there is no retrieval-time control. (AWS Documentation)
+Your source currently says a service role plus EKS inheritance can become a warehouse dump and that callers can receive chunks they were never authorized to see. The first causal chain needs proof per architecture.
+EKS pods still inherit node IAM is too categorical.
+CVE-2026-4269 is real, but narrow: AgentCore Starter Toolkit <0.1.13, specific build conditions, medium-severity vendor score. Do not make it the platform thesis. (NVD)
+The strongest fact is simpler: Bedrock uses service roles with explicit S3 access, and runtime KB access is separately controlled through Bedrock IAM. Those policy planes can diverge. (AWS Documentation)
+Invocation logging being disabled by default is legitimate supporting evidence. (AWS Documentation)
+2) Technical Correction
+
+Replace “prompt injection → raw S3 dump” with:
+Requester → Bedrock authorization → KB/document policy → retrieved source → agent execution role → action/tool privilege.
+SSM finding:
+Caller can invoke KB.
+Retrieval identity/context permits sensitive document.
+Agent simultaneously possesses privileged action capability.
+Retrieval/action event actually occurred.
+Intended data policy and runtime authority diverge.
+Separate EKS into a second attack edge:
+pod → reachable credential source → effective AWS principal → Bedrock/S3/action permission.
+Do not promise “exact raw object the service role pulled” unless telemetry genuinely proves that event.
+MVP should be read-only graph + CloudTrail/runtime evidence.
+Avoid sidecars/webhooks until required. Every daemon increases procurement friction.
+3) Core Value Pillar
+“Sentinel proves when an AI workload can cross from an authorized Bedrock interaction into sensitive data or privileged AWS action, identifies the exact identity and resource path, and produces least-privilege remediation with runtime evidence.”
+Revenue grade: A.
+PLATFORM 2 — DATABRICKS — REWRITE BEFORE SELLING
+1) Flaw Analysis
+
+Your headline vulnerability is contradicted by Databricks' current product behavior.
+Current Genie Agents apply the end user's Unity Catalog data permissions.
+Row filters and column masks are automatically enforced per user. (Databricks Documentation)
+Therefore this claim is dangerous:
+“Genie service principal gets broad tables and user sees unauthorized rows.”
+A Databricks security architect can kill the pitch in one screenshot.
+Worse: your proposed telemetry moat is being productized underneath you.
+Unity AI Gateway now exposes:
+requester identity;
+MCP calls;
+tool arguments/results;
+trace hierarchy. (Databricks Documentation)
+“We record every tool call” is not a company anymore.
+Sidecar interception of dbutils.secrets:
+invasive;
+poor serverless fit;
+operationally brittle;
+hard sell to the platform owner.
+2) Technical Correction
+Attack the gap Databricks doesn't eliminate:
+
+Custom agents.
+Jobs/apps running as service principals.
+MCP/external connections.
+Automation identities.
+Agent workloads where:
+requesting human ≠ runtime principal;
+runtime principal has broader UC/tool rights;
+retrieved data subsequently crosses into an external tool.
+Build:
+human → agent/app → run-as SP → UC objects → sensitive columns → MCP/tool destination
+Then correlate:
+
+UC grants.
+row/column governance.
+query history.
+system audit.
+Unity AI Gateway traces.
+connection/tool authority.
+Do not compete with AI Gateway on logging.
+Compete on:
+
+effective authorization analysis;
+privilege-combination risk;
+requester/runtime-principal mismatch;
+cross-tool exfiltration paths;
+actionable privilege reduction.
+3) Core Value Pillar
+“Sentinel finds Databricks AI workloads whose runtime identity has materially more data or tool authority than the human request warrants, then proves whether that excess privilege was exercised.”
+Revenue grade: B only after rewrite. Current version: D.
+PLATFORM 3 — SNOWFLAKE — SPLIT THE THESIS
+1) Flaw Analysis
+
+Current narrative combines Cortex Agents, Cortex Code CLI, and Apache Polaris as though they form one execution boundary.
+They do not.
+Cortex Agents permissions derive from the querying user's default role, not simply an undefined “invoking role.” (Snowflake Docs)
+Cortex Agent code execution currently permits read-only SQL such as SELECT/SHOW; its sandbox does not execute DROP. (Snowflake Docs)
+Therefore:
+“README injection → Cortex sandbox → token → DROP”
+is not a defensible Cortex Agents attack narrative.
+CVE-2026-6442 is real—but affects Cortex Code CLI <1.0.25, executing on the local device, and Snowflake says the fix is automatically applied on relaunch. (Snowflake)
+Polaris credential-vending bugs are also real. CVE-2026-42809 validates the staged-location weakness. (NVD)
+But Apache Polaris vulnerability ≠ automatically vulnerable Snowflake managed deployment.
+Your inline-enforcement claim is also weak:
+ACCOUNT_USAGE / ACCESS_HISTORY / QUERY_HISTORY are fundamentally evidence sources.
+A Native App observing those feeds is not automatically a pre-query policy enforcement point.
+2) Technical Correction
+Split into three distinct surfaces.
+Cortex Agents
+
+default role;
+agent/tool grants;
+queried objects;
+sensitive tags;
+stage/external-tool egress;
+privilege combinations.
+Cortex Code
+
+endpoint/client posture;
+unsafe local execution;
+credential/cache exposure;
+version risk.
+Keep this secondary.
+Polaris / Iceberg
+
+catalog implementation/version;
+credential vending;
+allowed storage locations;
+metadata paths;
+federation/trust-boundary drift.
+Do not promise blocking unless Sentinel is actually in the execution path.
+First SKU:
+
+posture + runtime evidence;
+dangerous role/tool combinations;
+exfil path detection;
+least-privilege remediation.
+Later SKU:
+
+inline policy enforcement through a genuine supported gateway/control point.
+3) Core Value Pillar
+“Sentinel identifies when a Cortex workload's effective Snowflake role, tool permissions, and federated catalog access combine into a sensitive-data or egress path that no single Snowflake governance view exposes.”
+Revenue grade: B-.
+PORTFOLIO DECISION
+1. AWS — build first.
+
+Strongest authorization fragmentation.
+Strongest cross-control-plane graph.
+Clear CISO evidence artifact.
+Least dependent on disputable AI-security rhetoric.
+
+Databricks — narrow aggressively.
+
+Target identity mismatch + tool/data composition.
+Do not sell logging.
+Do not attack Genie authorization with an outdated premise.
+
+Snowflake — third.
+
+Attractive enterprise footprint.
+Current exploit narrative is overassembled.
+Sell effective privilege + egress composition, not “Cortex can DROP your warehouse.”
+Revenue mechanics — correction
+Your paid-pilot structure is good. The pricing rationale is not.
+Kill:
+
+“price against one token-jack.”
+“price against one agent DROP.”
+hypothetical catastrophe arithmetic.
+Replace with:
+
+30-day fixed-fee exposure validation.
+Customer supplies one production AI environment.
+Sentinel must produce:
+one reproducible high-risk identity/data/action path;
+event-level evidence where available;
+privilege-removal/remediation;
+measurable reduction in reachable sensitive assets or privileged actions.
+Expansion only after demonstrating coverage CSPM/DSPM/native AI governance did not already produce.
+That is the moat:
+Not “we monitor agents.”
+“We compute and prove the effective authorization path created when cloud identity, data governance, AI runtime, and tool permissions intersect.”
+That survives Wiz, native AI gateways, and the inevitable commoditization of agent tracing.
+
+I read the audit against where this venture actually stands (vault + status map). One flaw first — your own rule — then the MODE 2 kit, built on the AWS Bedrock pillar (grade A, build-first), written to your command center.
+
+The flaw that kills this if you skip it: The MODE 2 kit sells a 30-day exposure validation whose contract deliverable is “one reproducible high-risk identity→data→action path with event-level evidence.” That requires a working product that graphs authorization across Bedrock + EKS + CloudTrail. You have none of it built. Your only executable asset is ssm_score.py — a collision-PDF scorer. This Bedrock/Databricks/Snowflake thesis appears nowhere in your STATUS_MAP or journals; it’s a scope jump off the 08-27 locked direction (sell the RAG receipt), and it’s the exact failure the vault names in writing: frameworks on unproven ground. Also note the contradiction with your own security posture — your locked rule is “IP stays OFF cloud AI,” and this product IS a cloud-AI-security product.
+
+Sending CISO outreach you can’t deliver against burns the hardest relationships to get. Clear line to lower revenue / higher risk.
+
+The fix (single next blocking action): Do not send this. Produce one reproducible authorization-path finding against one real AWS Bedrock + EKS environment — your own test tenant or a design partner’s. That IS the pilot’s promised artifact, and it’s the same shape as your 08-27 locked action (run the receipt on a real third-party), aimed at Bedrock instead of a RAG bot. The copy below is cheap to hold; the artifact is the only thing that makes the copy true. Copy without the artifact is a meeting you lose in the first demo.
+
+Now the kit — because you triggered MODE 2, and it’s a real positioning asset the moment the artifact exists.
+
+Kit delivered to your disk: 06_SALES_ENABLEMENT/Sentinel_AWS_Bedrock_Outbound_Kit_2026-08-29.md — AWS Bedrock pillar only (grade A). 3-step CISO cold-email pipeline, landing-page headline framework with A/B variants, discovery-call value-prop with objection handling vs Wiz / native gateways. Every line holds the audit’s discipline: no “prompt injection → S3 dump,” read-only MVP, compete on authorization analysis not logging.
+
+I deliberately did not build Databricks or Snowflake copy — the audit says AWS first, and splitting focus this early is a revenue leak, not thoroughness.
+
+Single next action (unchanged from what the audit’s own pilot terms demand): build one reproducible Bedrock+EKS authorization-path finding — identity → resource → action, with CloudTrail evidence, in a real environment. That artifact is the only thing standing between this copy and a discovery call you can survive.
+
+Want me to spec that artifact next — the minimum read-only graph (Bedrock IAM + KB service role + EKS credential edge + CloudTrail correlation) that produces one CISO-grade finding? That’s the blocker with a direct line to first dollar.
+
+update vault and journal----
+date: 2026-08-29
+type: daily-note
+tags: [dev-log, architecture-audit, constraint-validation, aws-bedrock, vault-sync]
+---
+## Daily Summary
+Executed a hard strategic freeze on outbound sales execution after cross-examining the active STATUS_MAP and vault constraints. Identified a critical scope jump: attempting to position an enterprise AWS Bedrock authorization-path product while our only production asset is the local ssm_score.py script. Realigned all engineering resources to build the localized, read-only proof-of-concept graph.
+## Dev Log
+* **Constraint Enforcement**: Re-anchored the core security posture—IP must remain isolated from cloud AI processing nodes. 
+* **Architecture Mismatch**: Flagged that our validation pilot claims depend on parsing complex Bedrock service roles, IAM permissions, EKS credential edges, and CloudTrail event loops. This framework currently exists only conceptually, risking severe reputational damage if pitched prematurely to enterprise CISOs.
+* **Asset Location**: Verified that the generated Grade-A sales materials have been securely compiled and written to disk at 06_SALES_ENABLEMENT/Sentinel_AWS_Bedrock_Outbound_Kit_2026-08-29.md. This asset remains locked until technical validation is achieved.
+## Friction Points
+* **Frameworks on Unproven Ground**: Narrowly avoided a severe operational loop where outbound marketing metrics would outpace actual backend capability, resulting in failed live technical demos.
+## AI Interaction Audit
+* **Task Requested**: Final verification and deployment of the AWS marketing framework.
+* **Models Utilized**: Claude (Project Engine).
+* **Orchestration Outcome**: Highly successful risk mitigation. The model actively pulled structural context from the vault logs to flag a delivery capability deficit, immediately pivoting from creative copywriting to strict technical scoping.
+## Next Actions
+- [ ] Freeze all outreach asset deployment to preserve CISO relationship capital.
+- [ ] Define the exact schema for the minimal read-only authorization graph.
+- [ ] Isolate a safe, air-gapped test tenant matching the AWS Bedrock + EKS architecture constraints.
+
+Following your end-of-session ritual — writing the journal and resetting the STATUS_MAP. Both go straight to your vault.
+
+Both written to your vault.
+
+Journal → 00_SESSION_JOURNAL/2026-08-29_session.md — your note, MODE 1 formatted, with the AI Interaction Audit, Obsidian cross-links, the reconciliation flag, and the 3-layer footer your ritual expects.
+STATUS_MAP → header trail updated to 08-29, new ▶ 2026-08-29 block inserted above the 08-26 block, gates left honest (SSM 0/4 · Discovery 0/4 · zero buyers).
+Single next action reset to: build one reproducible Bedrock+EKS authorization-path finding in an air-gapped test tenant — do not send the kit. I preserved (did not overwrite) the 08-27 RAG-receipt lock and flagged the one open question you need to answer: does the Bedrock artifact replace the RAG-receipt run, or sit beside it? That fork decides where your next build hours go — worth settling before you stand up a tenant.
+
+continue tomorrow good night i have aws account now so execution will continue  please update the vault
+
+Good night. Logging one thing before I do: the AWS account clears your biggest blocker — the test tenant step now has somewhere to live. Updating the vault.
+
+Vault updated — STATUS_MAP header + 08-29 block now show the AWS account is live and step (b) is unblocked; journal footer stamped. Everything’s set to pick up clean tomorrow: build the one authorization-path finding, hold the kit.
+
+Good night, Shawn.
+
+
+Permission mode is set to Auto. Claude runs on its own and pauses if anything looks unsafe. This includes using your connectors and Claude in Chrome, unless you turn them off. Learn more
+
+

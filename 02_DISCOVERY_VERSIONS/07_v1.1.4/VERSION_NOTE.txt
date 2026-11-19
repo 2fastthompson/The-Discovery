@@ -1,0 +1,1 @@
+v1.1.4: atomic consume as the single acceptance point, and signed execution events for both allow and deny. SHA-256 of V1_1_4_AUDIT_PACKAGE.zip: 9192b0e16ec75cf981b8b7718dd81b449997ede8b48334d2b4f227fb85aee790

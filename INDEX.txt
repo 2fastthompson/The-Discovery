@@ -1,0 +1,25 @@
+THE DISCOVERY EXPOSER KIT - INDEX
+Updated: November 19, 2026
+
+Folder                                        Files  Dates of contents
+00_Evidence/                                    198  May 26 - Nov 17, 2026
+  00_Screenshots/                               158  May 26 - Sep 11, 2026
+      All screenshots and phone photos in the kit, in one folder.
+      Files ending in " (2)" share a name with another file but have different content (a re-saved copy).
+  01_Chats/                                      36  Aug 24 - Nov 10, 2026
+      Chat transcripts from the Discovery build (Claude_Chat_history, Chats_from_Discovery_Build).
+  04_SEC_whistleblower_chat_2026-10-11/           2  Aug 30 - Oct 11, 2026
+      Duck.ai chat transcripts kept for the SEC whistleblower process.
+  05_IC3_complaint/                               2  Nov 17, 2026 (file date)
+      IC3 complaint photo, unredacted and redacted copies.
+01_Findings/                                     27  Aug 18 - Nov 19, 2026
+      Discovery findings, closure review, validation report, verification record,
+      v1.1.8 independent probe outputs (V1_1_8_evidence), Stripe test tables (Sept 4)
+      and Sept 4 working files.
+02_DISCOVERY_VERSIONS/                           28  packaged Nov 10, 2026
+      Discovery v1.0 through v1.1.8, one folder per version (14 folders).
+03_examples/                                      1  Nov 2026
+      SSM sample output (illustrative only).
+
+Top-level files: INDEX.txt, README.md (cover letter and introduction), VERSION_HISTORY.md, SHA256SUMS.txt (checksums for every file).
+Dates come from the date in each filename where there is one, otherwise the file's saved date.

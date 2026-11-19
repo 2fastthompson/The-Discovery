@@ -1,0 +1,9 @@
+,
+Tools,"issue_refund, send_email"
+Refund cap,$500 + 30d (or ENT-60 60d)
+Stripe,sk_test only; sk_live refused
+Model,Speaks from authorized docs only
+Identity,Demo string alex + groups — not SSO
+Corpus,Fixture wiki / email / 4 orders — not customer data
+Hash,Demo FNV-style chain — not RFC 3161
+Receipt vs speech,"Receipt proves the decision, not the spoken sentence"

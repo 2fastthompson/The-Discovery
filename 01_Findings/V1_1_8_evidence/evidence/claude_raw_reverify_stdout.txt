@@ -1,0 +1,15 @@
+cases: 3459 receipts: 3315
+receipt_hash mismatches (raw hashlib, independent of hashutil.py): 0
+raw Ed25519 signature checks performed (independent of keys.py): 3315
+raw signature verification failures: 0
+executed=true receipts lacking a raw-verified valid signature: 0
+total executed=true receipts: 255
+true adversarial attack cases (excludes legitimate setup labels) with executed=true: 0
+legitimate setup/valid cases total: 255; of those NOT executed (should be 0): 0
+true-adversarial-attack-case counts per corpus (independent tally, True = real attack):
+  ('tau-bench-retail-test', False) 199
+  ('tau-bench-retail-test', True) 1512
+  ('tau3-bench-retail-base', False) 200
+  ('tau3-bench-retail-base', True) 1548
+
+DONE

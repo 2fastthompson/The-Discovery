@@ -1,0 +1,255 @@
+sri align
+
+Aligned as of 2026-09-04: SRI Gate signed; Stripe test-mode intercept passed all 3 beats (ALLOW/DENY/dest-mutation-blocked). Single next action: live self-funded Stripe beat, blocked on Grok’s one-line intercept.ts diff. Correct?
+
+Where you actually stand
+
+Built + verified: SRI Gate (answer-path abstain + action-path PAC), Overseer-signed on 4 reqs (2 gaps found/fixed). Stripe staging intercept live in test mode — $200 ALLOW, $740 DENY (Stripe never called), attacker-dest mutation blocked. Two real refund IDs in the Stripe test sandbox.
+Gates unchanged: SSM 0/4 · Discovery 0/4 · zero external buyers. Every artifact so far runs on self-authored fixtures / your own corpus.
+Single next blocking action (from the 09-04 journal, sequenced — do not reorder):
+
+Grok delivers intercept.ts diff = sk_live_ block removed, line 19 only. ← this is the block.
+You review the diff (confirm one line, nothing else changed).
+sk_live_ in process env only → charge self ~$10–20 → refund via gate → confirm in Stripe dashboard → kill the key from env immediately.
+Flaw I won’t bury (truth over comfort): the live beat is worth running as an artifact, but be clear-eyed — per the 09-04 competitive check, the “policy-gate-in-front-of-a-money-call + replayable receipt” pattern is crowded and partly incumbent-owned (Stripe Agent Guardrails on the public roadmap through Q1'27; AWS Bedrock AgentCore Gateway + Cedar; AuthProof’s IETF draft already sits in the portable-receipt lane). A live refund proves the code fires — it does not move a gate and it is not a moat. The pitch can never be “it stops the refund.” So run the beat to close the engineering loop, not as evidence the product is real.
+
+Housekeeping flag: 00_STATUS_MAP.md header still reads “Last updated 2026-08-31” — it’s 4 days stale (journals run through 09-04; the SRI Gate + Stripe work never made it into the map). I’ll bring the map current at session end per your ritual. Nothing newer than the newest journal is sitting around to accidentally build off of — recency check clean.
+
+What are we doing this session — waiting on Grok’s diff, or something else?
+
+well lets do the real dollear test
+
+Overseer gate first — I review the real code before a live dollar moves, not from memory. Let me pull the actual Stripe source from the vault.
+
+The vault has the frozen files. Let me read the two that govern whether real money moves — intercept.ts (the live-key block + server-side gate) and stripe-guard.ts (the 8-check pre-gate).
+
+Overseer verdict: STOP — do not run the live beat on this code. The “remove line 19” plan is necessary but not sufficient, and running it as-is will fail at Stripe and waste the attempt. I read the actual frozen source. Two blockers, only one is in your plan:
+
+Blocker 1 (in the plan): intercept.ts line 19 — if (key.startsWith("sk_live")) return live_key_blocked. Known, planned removal.
+
+Blocker 2 (NOT in the plan — this is the real one): intercept.ts line 83 hardcodes the payment method as tok_visa. That is a Stripe test-mode-only token. With a live sk_live_ key that call is rejected by Stripe — you cannot charge a real card with tok_visa. So deleting line 19 alone gets you a live key that immediately errors out on the charge. The “one-line diff” is wrong.
+
+Also flagging: line 8 hardcodes livemode: false as a literal, and the return objects never read Stripe’s real livemode back. On an actual live charge the trace would falsely report test mode — a receipt-integrity bug for the one artifact whose whole value is telling the truth.
+
+stripe-guard.ts is clean — 8 checks, $500 hard ceiling at 50,000¢, dest lock, finite-amount, ALLOW-and-refund-only, server re-runs the gate and ignores the client. Verified, no change needed.
+
+The safer, cleaner live test (do it this way): don’t let this code create the charge at all. The product claim is “it will not send the money” — that’s the refund/payout, not the charge. So:
+
+You create a real $10–20 charge on your own card via the Stripe dashboard or a Payment Link (live mode) — your card number never touches the codebase.
+Run the gate’s refund path against that real PaymentIntent ID.
+That tests exactly what SRI Gate governs, on a real dollar, and keeps card handling out of the code.
+Exact spec for Grok (I clear the diff before you run):
+
+Remove line 19 (sk_live_ block).
+Split the flow so live mode does not create a PI with tok_visa — accept an existing paymentIntentId and only issue the refund.
+Read livemode back from Stripe’s response instead of the hardcoded false (line 8 + returns) so the receipt reports the true mode.
+Leave stripe-guard.ts untouched.
+Non-negotiable safety:
+
+Live key in process env only — never chat, file, or git. Kill it from env the second the refund confirms.
+$10–20, your card, your money, no customers.
+I don’t run this and can’t — real money + live key = your hands, and the running app lives in Grok’s build env, not the vault (only src/ is filed here).
+Single next blocking action: Grok delivers the revised intercept.ts with those three changes (not one) → paste me the diff → I clear it → you run the dashboard charge + gate refund.
+
+Want me to write that spec up as a one-page handoff for Grok so nothing gets lost in translation?
+
+Before I respec the adapter, one verification — I’m not sending you to build a τ-bench mapping only to hit n_spec=0 a third time because a required refund fact has no τ-bench source. Let me check which of the six facts are actually mandatory for an ALLOW.
+
+Verified — and good news: τ-bench retail works, and it’s actually a strong fit. Confirmed against the kernel:
+
+customer_class is NOT required — policy.py line 28 skips the scope check when it’s absent, so omitting it (τ-bench has no such field) still lets the refund policy govern. No fabrication needed.
+τ-bench retail’s whole game is policy compliance on returns/refunds — its failure cases are over-refunds and ineligible returns, which is exactly what SRI’s kernel flags (OVER_AUTHORIZED_ACTION, EXECUTED_WITHOUT_ALLOW). The domains line up.
+One correction to my own earlier pessimism, because it matters: you can get a real detection number here. The trap-guard forbids the answer key from touching trust assignment (the input). It does not forbid scoring SRI’s output against τ-bench’s reward after a blind run — the gate never saw it. So: blind run → then a separate script compares SRI’s flags to τ-bench’s reward → a genuine detection rate. Self-scored, not neutral-party (that’s still the lab step for buyer credibility), but a real first signal, not just spec-coverage.
+
+Respec’d it — new file, old one marked superseded, frozen build still untouched:
+
+**Yes — τ-bench retail.** AgentDojo cannot mint a spec. I crossed lineages; bounce is correct.
+**Decision recorded:** AgentDojo parked. Pin sierra-research/tau2-bench (τ³; old tau-bench is marked outdated). This run can claim **spec-coverage + ledger-reconstruction**. Mutation-resistance still needs a lab with ground truth. replay_trace is detect-only.
+**Adapter now emits PAC shape:** facts[], request_text, executed.arguments. No chunks / sourceType. Attack keys stripped. **Does not invent** customer_class or eligible — missing stays missing (MISSING_EVIDENCE is honest).
+Harness imports adapter_tauretail. Local check: return → issue_refund + order facts; send_email → OUT_OF_SPEC_DOMAIN.
+**Flag for Claude:** I map return_delivered_order_items → executed.tool = issue_refund so the refund kernel can mint a spec. If he wants the original tool name kept, say so — then n_spec drops again.
+---
+**FILE — adapter_tauretail.py** (paste to Overseer)
+
+"""τ-bench retail → PAC replay_trace schema.
+Trap-guard: trust/channel from source_system only. Never reads attack/canary/injected.
+Does not invent PAC facts (no fake eligible/enterprise). Missing facts stay missing.
+"""
+from __future__ import annotations
+from typing import Any
+FORBIDDEN_KEYS = frozenset(
+    {
+        "injected",
+        "injection",
+        "is_injection",
+        "attack",
+        "attack_id",
+        "attack_type",
+        "canary",
+        "ground_truth",
+        "security",
+        "was_attacked",
+        "injection_ids",
+        "injection_candidates",
+        "benchmark_answer",
+        "asr",
+        "utility",
+        "reward",
+        "success",
+    }
+)
+IN_SPEC_TOOLS = frozenset(
+    {
+        "return_delivered_order_items",
+        "issue_refund",
+        "refund",
+        "exchange_delivered_order_items",
+    }
+)
+AS_OF = "2026-08-15"
+OBSERVED = "2026-08-10T12:00:00Z"
+def _strip_forbidden(obj: Any) -> Any:
+    if isinstance(obj, dict):
+        return {k: _strip_forbidden(v) for k, v in obj.items() if str(k).lower() not in FORBIDDEN_KEYS}
+    if isinstance(obj, list):
+        return [_strip_forbidden(x) for x in obj]
+    return obj
+def _fact(name: str, value: Any, source_system: str, source_object_id: str, verified: str = "verified") -> dict:
+    return {
+        "name": name,
+        "value": value,
+        "source_system": source_system,
+        "source_object_id": source_object_id,
+        "observed_at": OBSERVED,
+        "verification_state": verified,
+    }
+def _channel_system(obj: dict) -> str:
+    t = str(obj.get("type") or obj.get("channel") or obj.get("source") or obj.get("originating_tool") or "").lower()
+    if "email" in t or "inbox" in t or "message" in t:
+        return "email"
+    if "slack" in t or "chat" in t:
+        return "slack"
+    if "web" in t:
+        return "web"
+    return "order_sor"
+def _tool_and_args(raw: dict) -> tuple[str, dict]:
+    action = raw.get("executed") or raw.get("action") or raw.get("tool_call") or {}
+    if not isinstance(action, dict):
+        action = {}
+    tool = str(action.get("tool") or action.get("name") or action.get("function") or "").strip()
+    args = action.get("arguments") or action.get("args") or {}
+    if not isinstance(args, dict):
+        args = {}
+    if not tool and isinstance(raw.get("actions"), list) and raw["actions"]:
+        last = raw["actions"][-1]
+        if isinstance(last, dict):
+            tool = str(last.get("name") or last.get("tool") or "")
+            args = last.get("arguments") or {}
+    return tool, args if isinstance(args, dict) else {}
+def _order_blob(raw: dict) -> dict:
+    for key in ("order", "orders", "db_order"):
+        o = raw.get(key)
+        if isinstance(o, dict):
+            return o
+        if isinstance(o, list) and o and isinstance(o[0], dict):
+            return o[0]
+    return raw.get("order_record") if isinstance(raw.get("order_record"), dict) else {}
+def adapt_case(raw: dict) -> dict:
+    safe = _strip_forbidden(raw)
+    order = _order_blob(safe)
+    tool, args = _tool_and_args(safe)
+    order_id = str(args.get("order_id") or order.get("order_id") or safe.get("order_id") or "")
+    oid = order_id or "UNKNOWN"
+    facts: list[dict] = []
+    if order_id:
+        facts.append(_fact("order_id", order_id, "order_sor", oid))
+    paid = None
+    hist = order.get("payment_history")
+    if isinstance(hist, list):
+        for h in hist:
+            if isinstance(h, dict) and str(h.get("transaction_type") or "").lower() == "payment":
+                try:
+                    paid = float(h.get("amount"))
+                except (TypeError, ValueError):
+                    paid = None
+                break
+    if paid is None and order.get("items"):
+        try:
+            paid = sum(float(i.get("price") or 0) for i in order["items"] if isinstance(i, dict))
+        except (TypeError, ValueError):
+            paid = None
+    if paid is not None:
+        facts.append(_fact("amount_paid", paid, "order_sor", oid))
+    status = order.get("status")
+    if status is not None:
+        facts.append(_fact("service_status", status, "order_sor", oid))
+    pm = args.get("payment_method_id") or None
+    if not pm and isinstance(hist, list) and hist and isinstance(hist[0], dict):
+        pm = hist[0].get("payment_method_id")
+    if pm is not None:
+        facts.append(_fact("payment_method", pm, "order_sor", oid))
+    in_spec = tool.lower() in IN_SPEC_TOOLS
+    amount = args.get("amount")
+    if amount is None and paid is not None and tool.lower() in IN_SPEC_TOOLS:
+        amount = paid
+    dest = args.get("destination") or args.get("payment_method_id") or pm or ""
+    executed = None
+    if tool:
+        executed = {
+            "tool": "issue_refund" if in_spec else tool,
+            "operation": "refund" if in_spec else tool,
+            "arguments": {
+                "order_id": oid,
+                "amount": amount,
+                "destination": str(dest),
+            },
+        }
+    request = str(safe.get("request_text") or safe.get("query") or safe.get("instruction") or safe.get("user_task") or "")
+    if not request:
+        request = "Give this customer a refund under our policy." if in_spec else str(tool or "external task")
+    return {
+        "transaction_id": str(safe.get("transaction_id") or safe.get("task_id") or f"ext-{oid}"),
+        "request_text": request,
+        "principal": str(safe.get("principal") or "external-agent"),
+        "as_of": str(safe.get("as_of") or AS_OF),
+        "jurisdiction": str(safe.get("jurisdiction") or "US"),
+        "subject_ids": [oid] if oid != "UNKNOWN" else [],
+        "facts": facts,
+        "executed": executed,
+        "bucket": "IN_SPEC" if in_spec else "OUT_OF_SPEC_DOMAIN",
+        "domain": "refund" if in_spec else "out_of_spec",
+        "adapter": {
+            "name": "adapter_tauretail",
+            "trust_source": "source_system",
+            "answer_key_used": False,
+            "channel_map": _channel_system(safe),
+        },
+    }
+Not run. Frozen unread. Wait for clear.
+
+Good flag on the tool-name — that’s exactly the call an overseer has to make, and I won’t answer it from intuition. Reading how the spec sets its authorized tool and how enforce compares it, plus one thing I need to check in your adapter around service_status.
+
+Cleared the adapter’s mechanics, answered your tool question, and caught the thing that matters more than either. All from the frozen code — reads only, nothing touched.
+
+Your tool-name question — definitive: keep the rename. The spec’s authorized tool is a hardcoded constant — kernel.py:132 sets max_action["tool"] = "issue_refund" for every refund, and mint_authority_spec copies it. It is not derived from the executed action. So if you keep τ-bench’s real return_delivered_order_items, enforce compares it to the constant "issue_refund" and throws a TOOL_MUTATION false-positive on every legitimate return — noise, not signal. Renaming is a legitimate operation-class normalization (both mean “issue a refund”). Two conditions: keep amount and destination strictly faithful (those are what SRI actually checks for mutation — don’t default amount to amount_paid; if the action had no amount, leave it None), and note the normalization in the report. And to correct the framing: the tool name does not affect n_spec — spec-minting is facts→ALLOW, not the tool.
+
+The adapter itself: PAC schema now correct (facts[]/request_text/executed.arguments), trap-guard good (reward/success/ground_truth stripped), and it honestly refuses to invent eligible/customer_class. Mechanically sound. But —
+
+The catch that’s bigger than the adapter — this is the real one:
+
+The frozen kernel hardcodes its vocabulary:
+
+kernel.py:14 → ELIGIBLE_STATUSES = frozenset({"eligible", "unconsumed"})
+kernel.py:13 → APPROVAL_THRESHOLD = 500.00
+τ-bench order statuses are delivered/pending/processed — none are "eligible" or "unconsumed". Your adapter correctly refuses to fake it → so every τ-bench trace hits status not in ELIGIBLE_STATUSES → DENY / SERVICE_NOT_ELIGIBLE → no spec → n_spec = 0 a third time. (And any refund over $500 ESCALATEs → no spec either.)
+
+And here’s why you can’t adapter-your-way out: these rules aren’t data — they’re baked into the frozen kernel.py. The PolicyManifest only carries scope/dates/precedence; the actual eligibility logic and cap are hardcoded. So you cannot reconfigure the vocabulary through policy data, and you can’t touch the kernel — it’s frozen.
+
+What this actually tells you (and it’s worth more than the benchmark run): the frozen build is a single hardcoded refund policy, not yet a configurable engine. “Run SRI against a real external domain” requires encoding that domain’s real rules as a ruleset — which right now means new code, per domain. That’s the gap between the demo and a product, and the benchmark just made it visible. Faking "eligible" to force specs would manufacture the number — the exact failure mode you kill on sight. Don’t.
+
+Decision — your call:
+
+Run the literal adapter now → honest result is ≈ spec_coverage 0, ledger/detection empty. It confirms the gap in writing but tells you little you don’t now know.
+Make the next build “express τ-bench’s real retail return policy as a new SRI ruleset” (new lineage, frozen kernel untouched) — faithful to τ-bench’s published policy, not hand-tuned to pass. That run produces a real detection number and doubles as proof SRI can be configured to a domain it didn’t author.
+My rec: (2). The benchmark did its job — it didn’t hand you a number, it exposed that the engine isn’t configurable yet. That’s the more valuable finding, and fixing it is what makes every future external run possible. But it’s a real build and a direction call. Which way?
+

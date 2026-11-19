@@ -1,0 +1,82 @@
+
+1788032148568_discoverylimit.zip
+1788032148568_discoverylimit.zip
+ZIP
+1788032148568_grok last sesion.txt
+1788032148568_grok last sesion.txt
+TXT
+1788032148569_AWS.txt
+1788032148569_AWS.txt
+TXT
+1788032148569_groks sessionlast.txt
+1788032148569_groks sessionlast.txt
+TXT
+1788032148569_Discovery product assessment.txt
+1788032148569_Discovery product assessment.txt
+TXT
+1788032148570_chatBnamed05.txt
+1788032148570_chatBnamed05.txt
+TXT
+1788032148570_chatAunknown.txt
+1788032148570_chatAunknown.txt
+TXT
+1788032148570_Secret Keysklfb4450275dc8346b9.txt
+1788032148570_Secret Keysklfb4450275
+dc8346b9
+.txt
+TXT
+1788032148570_discoverylimit 1.zip
+1788032148570_discoverylimit 1.zip
+ZIP
+1788032148571_SRIDiscoveryPack20260826.zip
+1788032148571_SRIDiscoveryPack20260826.zip
+ZIP
+add this to vault if you dont have this stuff already
+
+Two of these are live secret keys — I’m not putting those in the vault. Everything else I’ll check and add what’s missing. Let me first see what the vault already has so I don’t duplicate:
+
+Clear call on each. Two of these are live secret keys and are not going into the vault — that would push them into your provenance/git history, the exact opposite of what you want:
+
+🔴 AWS.txt — your live AWS access key + secret key, in plaintext. Refused. Keep it local, and it needs rotating (it’s burned).
+🔴 Secret Key...langfuse.txt — live Langfuse secret + public key + a full .env. Refused. Same: rotate it.
+The rest I’ll add. Let me confirm what’s already there vs. new and set up the folder:
+
+Existing groks sessionlast.txt is identical (blanks, no keys) — skipping it. Adding the 5 genuinely-new items now (staging them so I can write them byte-exact into the vault):
+
+All filed. Here’s the ledger:
+
+Added to vault → SRI_DISCOVERY/2026-08-29_grok_upload_ingest/ (with a README explaining each):
+
+Grok align handoff (grok_last_session_align_LAB-001.txt)
+Discovery/RagNot product assessment (Discovery_Product_Assessment_RagNot_2026-08-27.txt)
+The contrast pair — ChatB_receipt_named05.txt (receipt names the miss) + ChatA_trace_UNKNOWN.txt (trace can’t)
+SRIDiscoveryPack_2026-08-26.zip (5 PDFs + toy copy — scanned, no keys inside)
+Manifest refreshed to 1,616 files.
+
+Already had, skipped: both discovery-limit zips, groks sessionlast.txt (identical, no keys).
+
+Refused — will not put in the vault: AWS.txt (live AWS access + secret key) and the Langfuse sk-lf/pk-lf key file. Filing those would bake live credentials into your git/provenance history permanently.
+
+🔴 This changes the rotation from “should” to “now”: those keys weren’t just on-screen earlier — you just uploaded them into a cloud chat. Rotate all three today (AWS sri-lab-001 → delete the key in IAM, issue new; Gemini; Langfuse sk-lf). The copies on your machine are only good as a dated record.
+
+One strategy flag from the Grok assessment, so it doesn’t get lost: it pushes the RagNot “Decision Receipt” / core-plus-modules framing, and Grok’s handoff says “decide ONE entrance — finance vs insurance — don’t run both.” That’s the same unresolved fork as Bedrock-vs-the-08-27-RAG-receipt. It’s captured as input, not decided — gates are still 0/4. When you’re ready to actually pick a door, that’s the highest-leverage next conversation. For tonight: rotate the keys. Want anything else before you close down?
+
+57353160 1788032148568 grok last sesion
+TXT
+2afd6188 1788032148569 discovery product assessment
+TXT
+59fb034f 1788032148570 chatbnamed05
+TXT
+B1fd3c37 1788032148570 chataunknown
+TXT
+680bfea5 1788032148571 sridiscoverypack20260826
+ZIP
+good night
+
+Night, Shawn. Air-gap’s current and verified, vault and journal are closed out, tonight’s uploads are filed. First thing when you’re back: rotate those three keys — that’s the only loose thread that can’t wait. Rest well. 🌙
+
+
+Permission mode is set to Auto. Claude runs on its own and pauses if anything looks unsafe. This includes using your connectors and Claude in Chrome, unless you turn them off. Learn more
+
+
+Claude is AI and can make mistakes.

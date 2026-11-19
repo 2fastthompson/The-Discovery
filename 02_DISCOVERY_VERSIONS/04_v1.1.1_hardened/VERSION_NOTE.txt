@@ -1,0 +1,1 @@
+v1.1.1: commits must carry a valid Ed25519 signature from a trusted issuer key; hash alone is not authority. SHA-256 of V1_1_1_AUDIT_PACKAGE_HARDENED.zip: 12a0154987ec81f05e782834e55cc5f755ab34a9a5fb9c04c5415860278a0fd4

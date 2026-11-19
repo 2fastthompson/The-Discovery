@@ -1,0 +1,1 @@
+v1.1.2: request must come from the bound actor, and a revocation registry check invalidates unexecuted commits. SHA-256 of V1_1_2_AUDIT_PACKAGE_ACTOR_REVOCATION.zip: 90261958f27902979ef2b3121cb99c30312b5c5cde6cca1bc3822a07f1e450c6

@@ -1,0 +1,1 @@
+v1.1.3: a signed commit cannot execute twice (durable ledger), expiry checked at execution, verifier reconstructs expected outcome. SHA-256 of V1_1_3_AUDIT_PACKAGE.zip: 84249e9a5eb1d31eb21e62fba2e9f8279247afc8fa7608f0a05eb851f3837308

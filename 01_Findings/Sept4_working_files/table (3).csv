@@ -1,0 +1,6 @@
+Sheet,Job
+00_Readme,How to run
+01_Authority_Pack,Five-field map + unsafe-binding lint (ticket / message / wiki / llm → REJECT) + scoped exception tuple
+02_Traces,Paste history. Blue/yellow = input. class and material_dollars are formulas. Eight example rows — replace them.
+03_Scorecard,Print block + class dollars + gate PASS/FAIL + GO/WARNING/KILL
+04_Coverage_Map,Lineage % by field. Do not flip enforcement until required fields are mapped.

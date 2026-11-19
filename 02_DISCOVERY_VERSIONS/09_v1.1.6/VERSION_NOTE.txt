@@ -1,0 +1,1 @@
+v1.1.6: execution event binds the exact commit, complete receipt schema with extra keys rejected, coordinated locking; native Linux corpus run. SHA-256 of V1_1_6_AUDIT_PACKAGE.zip: a4255b5bfe13940b4b05bfc088b03d483c00fde1235b16a9ce39ce6e80076ab2

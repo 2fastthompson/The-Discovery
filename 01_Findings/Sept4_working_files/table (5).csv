@@ -1,0 +1,22 @@
+Col,Field,Required
+A,trace_id,yes
+B,order_id,yes
+C,refund_ts,yes
+D,proposed_amount,yes
+E,proposed_destination,if present in request
+F,actual_amount,if settled
+G,actual_destination,if settled
+H,auth_amount,from order record
+I,auth_destination,from payment SoR
+J,auth_currency,from order
+K,auth_refundable,at decision time
+L,policy_id,yes
+M,policy_version,yes
+N,principal,if known
+O,agent,or unknown_agent
+P,exception_present,Y/N
+Q,exception_in_scope,Y/N
+R,processor_reference,or blank
+S,ledger_outcome,SETTLED / FAILED / REVERSED / PARTIAL / UNKNOWN
+T,prior_settled_count,"same order, before this row"
+U,prior_settled_sum,"same order, before this row"

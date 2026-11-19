@@ -1,0 +1,6 @@
+Sheet,What it does
+00_Readme,Run order. CSA/Zenity-only cite. Funding test.
+01_Authority_Pack,Five-field map + unsafe-binding lint + scoped exception tuple.
+02_Traces,Paste A:U. Derivation + first-match class live in AL:BF. Rows 2–501 prefilled. Blank order_id → blank class (does not inflate UNKNOWN). Copy AL2:BF501 down for >500 rows; scorecard already reads to row 5001.
+03_Scorecard,Print block + material exposure + GO/WARNING/KILL in F14.
+04_Coverage_Map,Lineage % by field.

@@ -1,0 +1,1 @@
+v1.1.8 evidence: independent probe and reverify scripts and outputs, harness replay and unit-test output. SHA-256 of V1_1_8_evidence.zip: b83cf4d1c45852d26321c0e33e49e8713b5cca0e818e41d971c9e5b3f6ecdf29

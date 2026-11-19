@@ -1,0 +1,145 @@
+**Product Definition + Pressure Test**
+
+We take everything learned and turn it into a concrete product, then try to break it.
+
+---
+
+### 1. Product Definition (v1)
+
+**Working name (internal only):** Discovery Decision Boundary
+
+**One-sentence description:**  
+Discovery creates a sealed decision-time evidence boundary so that later evaluation cannot be contaminated by information that did not exist when the decision was made.
+
+**Core promise (evidence-support language only):**  
+It produces a time-bound, integrity-protected record of the information environment surrounding a decision and restricts later analysis to that record.
+
+**What the customer actually gets:**
+
+| Layer | Capability | When delivered |
+|-------|------------|----------------|
+| **Land (v1)** | Hindsight Isolation + Integrity Layer | First release |
+| | - Freeze decision context at time T | |
+| | - Cryptographic integrity (hashes + signatures) | |
+| | - Evaluation environment that cannot see post-T data | |
+| | - Exportable, review-ready package | |
+| **Expand (v1.5–v2)** | Epistemic Accounting | After land + instrumentation |
+| | - Observed vs available-but-unobserved | |
+| | - Unavailable / timed-out / permission-denied sources | |
+| | - Explicit capture gaps | |
+| | - Temporal validity of data | |
+| **Modules** | Domain-specific evaluation | Attachable from day one |
+| | - Evidence sufficiency | |
+| | - Fair lending / model risk checks | |
+| | - Claims severity (SSM) | |
+| | - Clinical / TEVV / compliance modules | |
+
+**Key architectural rule (unchanged):**  
+Modules may change. The sealed boundary does not.
+
+---
+
+### 2. Go-to-Market Sequencing
+
+**Land motion (first 6–9 months):**  
+Sell the isolation + integrity layer.  
+Demo in minutes: “Here is the evaluation environment. It physically cannot see anything created after the decision timestamp.”
+
+**Expand motion:**  
+Once the customer has the isolation layer and begins instrumenting sources, add progressive epistemic accounting (negative evidence, capture gaps, availability classification). This becomes expansion revenue and deeper lock-in.
+
+**Do not lead with:**  
+Negative knowledge, certified completeness, or cryptographic vault as the primary story.
+
+---
+
+### 3. Primary Beachhead
+
+**Financial Services – Model Risk / Credit Decisioning / Fair Lending**
+
+Why this one:
+- Highest regulatory pressure + willingness to pay
+- Clear pain around examination response and contemporaneous rationale
+- Isolation layer is immediately valuable even before full epistemic accounting
+- Natural path to later modules (evidence sufficiency, fair lending checks)
+
+Insurance (SSM) and Healthcare remain strong secondary targets.
+
+---
+
+### 4. Hard Pressure Test
+
+We now try to break the product.
+
+**Attack 1 – Competitive equivalence**  
+“This is just event sourcing + point-in-time queries + access controls.”  
+**Result:** Partially lands. Isolation + integrity can be approximated. Differentiation only becomes real when negative evidence and capture-gap accounting are added.  
+**Mitigation:** Sequence the land correctly, then deepen.
+
+**Attack 2 – Implementation difficulty**  
+Customers have messy systems and cannot cleanly define decision boundaries.  
+**Result:** Real risk. Full epistemic accounting is hard.  
+**Mitigation:** Do not require perfect boundaries on day one. Start with isolation of whatever is already being captured, then expand.
+
+**Attack 3 – Buyer motivation**  
+CROs and GCs want a signed PDF they can hand over, not epistemic theory.  
+**Result:** Valid.  
+**Mitigation:** Lead with the isolation demo and the review-ready package. Keep deeper epistemic features behind the scenes until the customer asks for more defensibility.
+
+**Attack 4 – “Negative knowledge is unprovable”**  
+**Result:** Correct at universal scale.  
+**Mitigation:** Use *bounded* accounting only inside a customer-declared boundary. Never claim universal completeness.
+
+**Attack 5 – Sales cycle and positioning**  
+Leading with hard technical concepts kills deals.  
+**Result:** High risk if we ignore Venice’s commercial warning.  
+**Mitigation:** Commercial language stays simple and evidence-oriented. Technical depth is used in proof-of-concept and expansion, not in the first meeting.
+
+**Attack 6 – Non-Discovery constraint**  
+Customers will not share the sealed state.  
+**Result:** Already designed for. Product must support fully private / customer-side execution.
+
+---
+
+### 5. What Survives the Pressure Test
+
+| Element | Survives? | Notes |
+|---------|-----------|-------|
+| Sealed decision-time boundary | Yes | Core remains |
+| Hindsight isolation | Yes | Strongest near-term sellable property |
+| Integrity / proof layer | Yes | Necessary but not differentiating alone |
+| Progressive epistemic accounting | Yes | Must be sequenced, not led with |
+| Modular performance modules | Yes | Still correct |
+| Leading with deep negative knowledge | No | Too hard and too abstract for initial sale |
+| Cryptographic Vault as primary identity | No | Commodity risk |
+| Claiming “completeness” | No | Dangerous |
+
+---
+
+### 6. Final Product Stance (Locked for now)
+
+**Product:** Discovery Decision Boundary  
+
+**Land with:** Hindsight isolation + integrity-protected evaluation environment + review-ready export  
+
+**Expand with:** Bounded epistemic accounting (observed / unobserved / unavailable / capture gaps)  
+
+**Differentiator (internal):** Ability to make the decision-time information boundary auditable, including what was not known or not captured, while preventing later contamination  
+
+**Commercial language:** Evidence support only. No outcome guarantees.
+
+**Beachhead:** Financial Services Model Risk / Fair Lending  
+
+**Architecture principle:** Modules change. The boundary does not.
+
+---
+
+This is now a concrete product that incorporates every major finding from Venice, DeepSeek, and the prior analysis.
+
+**Next possible moves:**
+1. Write the exact customer-facing one-pager and pilot design for Financial Services
+2. Define the minimum viable technical requirements for the Land layer
+3. Design the internal Red-Team Trial under the new sequencing
+4. Map SSM into this product structure
+
+Which one do you want to pressure-test or build next?

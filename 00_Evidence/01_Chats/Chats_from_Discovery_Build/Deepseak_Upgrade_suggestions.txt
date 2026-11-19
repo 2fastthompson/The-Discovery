@@ -1,0 +1,42 @@
+Strong analysis overall. I agree with the core move: **epistemic state is the differentiator; cryptography is a proof/mechanism layer, not the category.** That inversion is correct and commercially important.
+
+Key points where I agree:
+
+1. **Cryptographic Decision Vault is not a moat.** Hardware attestation, confidential computing, signed evidence, and policy-controlled key release are increasingly commodity infrastructure across major clouds and silicon vendors. Positioning around “cryptographically sealed execution” invites comparison to existing confidential computing offerings and loses the sale.
+
+2. **Existing bitemporal/provenance systems create crowding but not equivalence.** XTDB, TensorDB, TwiceDB, Abagraph, event sourcing, and point-in-time feature stores can reconstruct “what was recorded as known at time T.” They generally do not model:
+   - available but unobserved
+   - unavailable due to timeout/permission/failure
+   - capture gaps
+   - stale data
+   - post-decision information invisibility beyond access controls
+   
+   That is the real gap.
+
+3. **The stacking architecture is right.** Frozen State → epistemic-state requirements → hindsight isolation → integrity/proof → modules. That preserves the original architecture while making the hard problem explicit.
+
+4. **“Certified Epistemic Completeness” is dangerous.** “Completeness” is almost impossible to certify outside a formally defined boundary, and even then unknown unknowns remain. The safer property is **bounded completeness**: within a declared decision boundary, Discovery accounts for the epistemic status of every known source. That is testable.
+
+5. **The red-team trial is the correct decisive test.** But it needs sharper operational definitions, otherwise vendors can game “available,” “unavailable,” and “unknown.” Specifically:
+   - The source registry and decision boundary must be fixed in advance.
+   - “Available” must mean accessible through an authorized, operational retrieval path at T0, not merely theoretically existing.
+   - “Unavailable” must require timestamped evidence of failure, permission denial, timeout, or policy exclusion.
+   - Hindsight isolation must include metadata/side-channel leakage, not just direct record visibility.
+
+6. **The test should compare against category-native capabilities, not a custom-built stack.** If a competitor can pass only by writing substantial custom code, that is still useful intelligence but not a category kill. The question is whether any existing category natively provides negative evidence accounting and enforced epistemic boundary evaluation. If none do, Discovery has room.
+
+One place I would push further:
+
+**Negative knowledge is only commercially valuable if it is tied to a specific decision consequence.** Buyers do not pay for negative evidence accounting in the abstract. They pay when a missed source, unavailability, or capture gap changes liability, audit, regulatory, or insurance outcomes. So Discovery should not merely classify epistemic states; it should connect them to **decision risk**:
+- “This source was available but not observed; under this policy, that creates a known compliance gap.”
+- “This source was unavailable due to timeout; that explains why the decision could not have used it.”
+- “This capture gap means the decision record is incomplete for audit purposes.”
+
+That turns negative knowledge from a technical artifact into a commercially defensible product.
+
+Final thought:  
+The commentary’s conclusion **“lock the technical invariant, not the marketing name”** is exactly right. The strongest near-term positioning is not “Cryptographic Decision Vault” or “Zero-Knowledge Evaluation.” It is:
+
+> **Discovery makes the decision-time epistemic boundary auditable, including what was not known, not just what was recorded.**
+
+If the red-team trial shows existing systems cannot do that natively, that is the category. If they can, the differentiation fails regardless of cryptography.

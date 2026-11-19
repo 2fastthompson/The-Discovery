@@ -1,0 +1,54 @@
+Sentinel Risk Intelligence  let's align the best we can
+
+Locked position: SRI = Provable Action-Control. Enforce that an agent takes only authorized actions, prove each one with a receipt. Not injection detection, not secure RAG, not SSM.
+
+State as of today:
+
+sri_pac/ (Grok’s) FROZEN 09-01, root 3f3639cf, 18/18, verified by me in code and on your PC. policy_kernel_v0/ = reference only. sri_discovery_demo/ byte-identical.
+Gates unchanged: SSM 0/4 · Discovery 0/4 · zero buyers. Every fixture so far is self-authored — that buys correctness, not generalization.
+Dead, don’t let Grok or GPT drag these back: SSM carrier GTM (dead 08-20), expert-witness/hot-rod consulting (dead 08-26), prompt-injection framing, the unbuilt Bedrock posture thesis.
+
+Priority:
+
+Shadow Discovery replay on workflows you did not author, via replay_trace() (spec §17 step 8). Only action that moves a gate off zero. Frozen pending your word.
+NaN/inf guard on amount (math.isfinite) — pre-deployment, not blocking, but it touches a frozen file and breaks the hash, so it’s a re-freeze decision, not a quick patch.
+Everything else — outreach, copy, module two, more builder fixtures — stays parked under your own value-before-revenue rule.
+
+Single next blocking action: authorize or explicitly defer the Shadow Discovery replay. Nothing else changes the company’s position.
+
+Flaw, stated: your standing instruction to me says drive first-dollar revenue “utilizing SRI and SSM.” That contradicts two of your own live decisions — SSM’s insurance GTM is dead, and you parked the buyer on 08-31 until the product is dialed in. I’m holding your decisions over the instruction text. Fix it in Settings → Profile, or tell me the parking order is lifted and I’ll switch to revenue motion.
+
+We verified on the upgtaded discory last night and its a pass on everything. And" i don't know" was admitted
+
+Hold the win claim until three things are answered — as your verifier I can’t ratify “pass on everything” from the sentence alone.
+
+Flaw analysis
+
+Who authored the traces? If Grok or you wrote them, this is the same class as the 18/18 — correctness on self-authored fixtures, not generalization. Gates stay SSM 0/4 · Discovery 0/4. It only counts as the Shadow Discovery gate if the workflows came from outside your build.
+“I don’t know” is the design firing, not a result. One correct abstain is a demo point. What moves the company is the rate set from Round 7: Unauthorized-Action, Safe-Automation, Human-Escalation, Authority-Mutation (must be 0%), Ledger-Reconstruction (must be 100%), plus spec coverage. “Passed everything” without those numbers isn’t a report a skeptic can read.
+Custody breach risk. “Upgraded” implies code changed. If any file in sri_pac/ moved, root 3f3639cf is void and the frozen manifest is stale — which also means the 08-31 witness-email anchor no longer covers what’s on disk. I need to know before anything else gets built on top of it.
+
+Technical correction
+Send me, in this order: the run output, the file list with hashes, and one line on who wrote the traces. Also confirm whether the math.isfinite NaN/inf cap bypass got closed in the upgrade or is still open. I re-read the code, re-verify, and cut a new FROZEN manifest with a fresh witness email if it changed.
+
+Core value pillar (unchanged, and this result doesn’t move it yet): untrusted data can move through the workflow, authority cannot move with it — provable per action.
+
+Single next blocking action: paste the run output and file list. Everything else waits on that.
+
+Right — none of that runs on a phone. Neither does the trace-source decision if it means looking anything up.
+
+Do nothing. The build is frozen, the custody record is clean, and nothing degrades by sitting still. That’s the point of freezing it.
+
+When you’re back at the machine, open in this order:
+
+00_STATUS_MAP.md
+sri_pac/CLAUDE_VERIFICATION.md
+Paste me the guard script before you run it.
+
+Everything else is queued and waiting on you, not the other way around.
+
+Have to wait till i get home
+
+Yep. Nothing’s on fire — it’s frozen for exactly this reason.
+
+Ping me when you’re at the machine.

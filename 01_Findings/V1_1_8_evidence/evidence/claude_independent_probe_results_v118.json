@@ -1,0 +1,153 @@
+{
+  "pass": [
+    {
+      "name": "gate.commit produced ALLOW commit for valid req",
+      "detail": "ValidatedCommit(commit_id='eaaca4bc88ca258f47c17b98', gate_version='sri-v1.1-commitguard-0', decision='ALLOW', reason='IN_SPEC', authority_hash='947bf2d15e566d9ec36a6c35bb911727445786f6044cf6aaa8ffb26f3345839e', request_hash='2478bf48a408de0b6b2532bbab29cbbb14b57c8e1126ca68cb4bb7ea85dc728d', pre_state_hash='8732edb03b72c9e7dec9ce2cbce2c59a947a2242f9229590197b4d93df8481b0', principal_id='user-1', actor_id='agent-A', action_type='refund', resource_id='order-1', amount=50.0, destination='card_orig', payment_identity='pm_orig', nonce='nonce-1', committed_at=1000000.0, revocation_version=1, issuer_key_id='test-key-1', signature='805804b9716fbb97dc120bd60a4f9e900ed9f228ccbacba0217cad52d5ca936f4c84f873c578e005f1cb9465c43c0ffa9297d20b8061e214cfa10d851cb6530f', commit_hash='5b40ef32956a1a37736e782fc029c29c2023cfdd7979025861f28bbbe0bd095a')"
+    },
+    {
+      "name": "valid execution actually executed",
+      "detail": ""
+    },
+    {
+      "name": "genuine ALLOW receipt verifies ok",
+      "detail": "{\"ok\": true, \"mismatches\": [], \"authorization_valid\": true, \"authorization_why\": \"authorization_valid\", \"execution_evidence_valid\": true, \"execution_why\": \"event_ok\", \"receipt_hash\": \"f8ebc0f3a2abc1f1d2d5b8840ea97b5482917b485e420af0d9d2214ccc318e88\"}"
+    },
+    {
+      "name": "commit=None denial: executed is False",
+      "detail": ""
+    },
+    {
+      "name": "commit=None denial: reason is DIRECT_EXECUTOR_BYPASS",
+      "detail": "DIRECT_EXECUTOR_BYPASS"
+    },
+    {
+      "name": "commit=None denial: commit_signature is None on genuine receipt",
+      "detail": ""
+    },
+    {
+      "name": "commit=None denial: issuer_key_id is None on genuine receipt",
+      "detail": ""
+    },
+    {
+      "name": "genuine no-commit denial verifies ok (baseline before tamper)",
+      "detail": "{\"ok\": true, \"mismatches\": [], \"authorization_valid\": false, \"authorization_why\": \"missing_spec_or_commit\", \"execution_evidence_valid\": true, \"execution_why\": \"event_ok\", \"receipt_hash\": \"585d299e57401df36136fa682add8a8dcfe8849919922273b0d0236be2711390\"}"
+    },
+    {
+      "name": "V1.1.8 FIX 1 CONFIRMED: fabricated commit_signature='deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef' on no-commit denial now REJECTED",
+      "detail": "{\"ok\": false, \"mismatches\": [\"execution_event:field_mismatch\", \"absent_commit_commit_signature_not_null\"], \"authorization_valid\": false, \"authorization_why\": \"missing_spec_or_commit\", \"execution_evidence_valid\": false, \"execution_why\": \"field_mismatch\", \"receipt_hash\": \"b9a05a8c786d095ef7f6381decb46c74a72109e2f92b204451337e4f7f111d68\"}"
+    },
+    {
+      "name": "V1.1.8 FIX 1 CONFIRMED: fabricated issuer_key_id='attacker-key' on no-commit denial now REJECTED",
+      "detail": "{\"ok\": false, \"mismatches\": [\"execution_event:field_mismatch\", \"absent_commit_issuer_key_id_not_null\"], \"authorization_valid\": false, \"authorization_why\": \"missing_spec_or_commit\", \"execution_evidence_valid\": false, \"execution_why\": \"field_mismatch\", \"receipt_hash\": \"30ac85eba0caee27f83682e2be3af182d086b3765476613984930d45660e7324\"}"
+    },
+    {
+      "name": "spec=None denial: executed is False",
+      "detail": ""
+    },
+    {
+      "name": "spec=None denial: reason is MISSING_AUTHORITY_SPEC",
+      "detail": "MISSING_AUTHORITY_SPEC"
+    },
+    {
+      "name": "spec=None denial: authority_id is None",
+      "detail": ""
+    },
+    {
+      "name": "spec=None denial: authorized_amount_or_ceiling is None",
+      "detail": ""
+    },
+    {
+      "name": "genuine neither-denial verifies ok (baseline before tamper)",
+      "detail": "{\"ok\": true, \"mismatches\": [], \"authorization_valid\": false, \"authorization_why\": \"missing_spec_or_commit\", \"execution_evidence_valid\": true, \"execution_why\": \"event_ok\", \"receipt_hash\": \"9f10a5f409aa9d19ad94ddbbe2d630951b297f32437d5e62975a220dd5b5feca\"}"
+    },
+    {
+      "name": "V1.1.8 FIX 1 CONFIRMED: fabricated authority_id='attacker-authority' on neither-denial now REJECTED (ok=False)",
+      "detail": "{\"ok\": false, \"mismatches\": [\"execution_event:field_mismatch\", \"absent_spec_authority_id_not_null\"], \"authorization_valid\": false, \"authorization_why\": \"missing_spec_or_commit\", \"execution_evidence_valid\": false, \"execution_why\": \"field_mismatch\", \"receipt_hash\": \"6d22c618aac87389f271046702d94bcfcb9ab9543bdaa0a2a19eec6bc4a84f08\"}"
+    },
+    {
+      "name": "V1.1.8 FIX 1 CONFIRMED: fabricated authorized_amount_or_ceiling=999999.0 on neither-denial now REJECTED (ok=False)",
+      "detail": "{\"ok\": false, \"mismatches\": [\"execution_event:field_mismatch\", \"absent_spec_authorized_amount_or_ceiling_not_null\"], \"authorization_valid\": false, \"authorization_why\": \"missing_spec_or_commit\", \"execution_evidence_valid\": false, \"execution_why\": \"field_mismatch\", \"receipt_hash\": \"9d21ce9524337758df27e51c87903d9aed387b8df14039f8f28dfe26f5fc8111\"}"
+    },
+    {
+      "name": "V1.1.8 FIX 1 CONFIRMED: fabricated authorized_destination=['attacker_dest'] on neither-denial now REJECTED (ok=False)",
+      "detail": "{\"ok\": false, \"mismatches\": [\"execution_event:field_mismatch\", \"absent_spec_authorized_destination_not_null\"], \"authorization_valid\": false, \"authorization_why\": \"missing_spec_or_commit\", \"execution_evidence_valid\": false, \"execution_why\": \"field_mismatch\", \"receipt_hash\": \"bd00c7e6130e69f89b0cf72de8ad65523c916afc4269bf59789608969d1b4c17\"}"
+    },
+    {
+      "name": "V1.1.8 FIX 1 CONFIRMED: fabricated authorized_payment_identity='attacker_pm' on neither-denial now REJECTED (ok=False)",
+      "detail": "{\"ok\": false, \"mismatches\": [\"execution_event:field_mismatch\", \"absent_spec_authorized_payment_identity_not_null\"], \"authorization_valid\": false, \"authorization_why\": \"missing_spec_or_commit\", \"execution_evidence_valid\": false, \"execution_why\": \"field_mismatch\", \"receipt_hash\": \"a8aaafa4b17d4c0ab311b5caebc631fd91314069c936dfd68dbc2fe37ab22642\"}"
+    },
+    {
+      "name": "V1.1.8 FIX 1 CONFIRMED: fabricated spec_expires_at=999999.0 on neither-denial now REJECTED (ok=False)",
+      "detail": "{\"ok\": false, \"mismatches\": [\"execution_event:field_mismatch\", \"absent_spec_spec_expires_at_not_null\"], \"authorization_valid\": false, \"authorization_why\": \"missing_spec_or_commit\", \"execution_evidence_valid\": false, \"execution_why\": \"field_mismatch\", \"receipt_hash\": \"e14ffe7e8274b45f174b2b19d2efa5d42f29b47583d0291c050663175c5ddd05\"}"
+    },
+    {
+      "name": "V1.1.8 FIX 1 CONFIRMED: fabricated commit_signature='cafebabecafebabecafebabecafebabecafebabecafebabecafebabecafebabe' on neither-denial now REJECTED (ok=False)",
+      "detail": "{\"ok\": false, \"mismatches\": [\"execution_event:field_mismatch\", \"absent_commit_commit_signature_not_null\"], \"authorization_valid\": false, \"authorization_why\": \"missing_spec_or_commit\", \"execution_evidence_valid\": false, \"execution_why\": \"field_mismatch\", \"receipt_hash\": \"428e9ee0bd5aff08957c1ce352f93b44f800ef7a9d9b02a7786a72240349f059\"}"
+    },
+    {
+      "name": "V1.1.8 FIX 1 CONFIRMED: fabricated issuer_key_id='attacker-key-2' on neither-denial now REJECTED (ok=False)",
+      "detail": "{\"ok\": false, \"mismatches\": [\"execution_event:field_mismatch\", \"absent_commit_issuer_key_id_not_null\"], \"authorization_valid\": false, \"authorization_why\": \"missing_spec_or_commit\", \"execution_evidence_valid\": false, \"execution_why\": \"field_mismatch\", \"receipt_hash\": \"b03c64f9b2a7e04b8d60b6707e3fb3e2ee080c728b0d70c78db44092dc880ab9\"}"
+    },
+    {
+      "name": "Even with fabricated summary fields, executed field itself was never flipped to True",
+      "detail": ""
+    },
+    {
+      "name": "The underlying signed execution_event dict was left byte-identical across all fabrication attempts (only top-level receipt fields were mutated)",
+      "detail": ""
+    },
+    {
+      "name": "REPRODUCED: Executor can be constructed with coordinator=None (no error)",
+      "detail": ""
+    },
+    {
+      "name": "require_coordinated() DOES catch the uncoordinated executor when explicitly called",
+      "detail": ""
+    },
+    {
+      "name": "V1.1.8 FIX 2 CONFIRMED: uncoordinated executor now DENIES instead of silently executing",
+      "detail": "decision=DENY reason=MISSING_COORDINATOR"
+    },
+    {
+      "name": "V1.1.8 FIX 2: denial reason is MISSING_COORDINATOR",
+      "detail": "MISSING_COORDINATOR"
+    },
+    {
+      "name": "V1.1.8 FIX 2: rejected commit was NOT consumed by the ledger",
+      "detail": ""
+    },
+    {
+      "name": "V1.1.8 FIX 2 CONFIRMED: mismatched-coordinator executor also DENIES",
+      "detail": "decision=DENY reason=MISMATCHED_COORDINATOR"
+    },
+    {
+      "name": "V1.1.8 FIX 2: denial reason is MISMATCHED_COORDINATOR",
+      "detail": "MISMATCHED_COORDINATOR"
+    },
+    {
+      "name": "V1.1.8 FIX 2: still not consumed after the mismatched attempt",
+      "detail": ""
+    },
+    {
+      "name": "V1.1.8 FIX 2: the same commit, run through the correctly coordinated executor, EXECUTES",
+      "detail": "decision=ALLOW reason=IN_SPEC"
+    },
+    {
+      "name": "V1.1.8 FIX 2: a second attempt through the coordinated executor now correctly replay-denies",
+      "detail": "decision=DENY reason=COMMIT_ALREADY_EXECUTED"
+    },
+    {
+      "name": "verifier.py does NOT import CommitGuard.decide or Executor.execute (no circularity via re-running system-under-test)",
+      "detail": "{('keys', 'verify_signature'), ('keys', 'public_from_hex'), ('hashutil', 'GATE_VERSION'), ('events', 'event_payload'), ('__future__', 'annotations'), ('keys', 'signed_payload'), ('hashutil', 'sha256_hex')}"
+    },
+    {
+      "name": "Genuine commit signature independently verifies under RAW cryptography.Ed25519PublicKey.verify (not just keys.verify_signature)",
+      "detail": ""
+    },
+    {
+      "name": "Tampered payload correctly REJECTED by raw cryptography (signature does not verify over changed bytes)",
+      "detail": ""
+    }
+  ],
+  "fail": []
+}

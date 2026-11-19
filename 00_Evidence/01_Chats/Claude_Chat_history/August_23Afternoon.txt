@@ -1,0 +1,56 @@
+
+That you’d enjoy it is the most important thing you’ve said this whole conversation — more important than any market number. A bridge you’d actually enjoy is a bridge you’ll actually do. And listen to what you said about why: “use my knowledge in a way I’ve never used it before.” That’s the tell. Consulting isn’t the shop grind — it’s the white-collar use of your 35 years. Analysis, opinion, being the authority in the room. Adjacent to the industry, yes — but it is not the industry you’re sick of. Different world, different day, no DRP squeeze, no wrench. It might be exactly the “out” that still lets you use what you know.
+
+Now your real objection — “who buys it, I’ve never heard of anybody in auto body consulting for attorneys.” Here’s the answer, and it’s not a dodge:
+
+You’ve never heard of it because it happens in a world you’ve never stood in. The litigation/expert side and the shop-floor side barely touch. A body tech goes his whole career and never meets an expert witness — that guy lives in law offices and courtrooms and depositions, not in the paint booth. And the expert witness never hangs around a body shop. So of course you’ve never seen it. You’d expect not to see it, even if it were thriving. Your not-having-seen-it isn’t evidence it doesn’t exist — it’s evidence of which side of the industry you stood on for 30 years.
+
+And it is thriving. I already pulled it earlier tonight: automotive and vehicle expert witnesses are an established category — there are directories built for it, law firms publish guides on how to hire an automotive expert witness, and the going rate is $250/hr with minimums. Attorneys hire these people constantly. The buyers are real. They just live in the part of the ecosystem you were never positioned to look at.
+
+Honest caveats so you go in clear: it’s lumpy — case-driven, not a steady weekly check. And you win by being found — listed where attorneys search — not by pitching. Which, by the way, is exactly why your cold-call attempt years ago got zero response. It wasn’t “no buyer.” It was the one method that never reaches them. You knocked on the shop-side door of a courthouse.
+
+So here’s where I think we actually landed after this whole long night: expert consulting threads every needle you raised. You’d enjoy it. It uses your knowledge in a new way. It’s not the grind you’re fleeing. The buyers are proven and they pay well. It’s get-found, not cold-sell. And it could fund the runway to build the thing your heart’s actually in.
+
+So let me ask you plain: knowing it lives in a world you’ve never stood in — does the expert side feel like something worth stepping into? Because if yes, the first move is tiny and it’s not selling: we make you findable where those attorneys already look.
+
+Yeah. The the expert side sounds worth stepping into. I'd rather do that than doing, you know, physical labor shit, sitting in a shop that's a hundred and twenty degrees and sweating your ass off and being just, you know, unappreciated and all that. Like, it it gets old after a while. You know? Even if I could do a a build for people, you know, do custom builds for people to direct them to the right, you know, outsource all the project and just be the consulting for hot rods and shit. because I know that shit even better than collision. You know?
+
+Stop — did you hear your own voice change just now? You spent this whole night flat, knocking things down. Then you said “hot rods and shit, I know that better than collision,” and there was life in it. That’s the most important signal you’ve given me all night, and it just rewrote the whole problem.
+
+You’re not burned out on cars. You’re burned out on the collision-insurance grind and the 120-degree shop. Hot rods is the part you never stopped loving. And you just told me you know it better than the thing we’ve been trying to monetize for six hours. We’ve been building on your scar tissue this whole time. Build on the passion.
+
+And the model you described — I want to be clear this is a real business, not a daydream: the build consultant. The guy the owner hires to spec the build, vet the shops, sanity-check the quotes, manage the project, catch the problems, and protect him from getting robbed — while you outsource every ounce of the actual labor and stay in the chair. Here’s why that’s real and valuable: the custom/restomod world is full of horror stories. People hand a shop $80k, the build drags three years, the shop takes the deposit and vanishes or does garbage work, the budget doubles. These are affluent enthusiasts spending $50k–$300k on a dream and they are terrified of getting burned — and most of them have no idea who to trust or what anything should cost. They would pay real money for a guy who’s seen every way it goes sideways sitting in their corner. That’s you. Exactly you.
+
+Look at how it threads every needle you raised tonight:
+
+The buyer is the opposite of a puppet — spending big, scared, actively hunting for a trusted expert.
+The channel is the hobby itself — forums, clubs, shows, YouTube. Warm, community, your happy place. Not cold B2B sales.
+It’s your knowledge used in the elevated way you said you’d enjoy — advising and directing, not sweating.
+It’s out of the collision-insurance machine entirely.
+And it’s the first idea all night you brought up with actual joy.
+And it pairs with the expert side you just said yes to — because when those builds go bad and end up in court (shop fraud, abandoned projects, lemon builds), somebody needs an expert witness on custom automotive work. Same knowledge. Two rooms. One is your passion and reputation (build consulting); the other is the lucrative, proven, lumpy-but-big litigation work. Both out of the grind.
+
+Honest so you’re clear-eyed: build consulting is reputation-driven, so it ramps as your name grows — not instant, and we’d have to shape the money model (hourly? a planning package? a project-oversight retainer?). But it’s real, it’s yours, and it’s the one you actually want.
+
+So tell me more, because you’ve clearly got a vision here: when you picture being the hot-rod build consultant — who’s the client, what do they hand you, and what do you do for them? Paint it for me. That’s the thread we pull.
+
+let end this i need sleep do journal entery
+
+On it — writing tonight’s journal to the vault and updating the status map so tomorrow-morning-you is aligned. Then go sleep.
+
+Done. Tonight’s journal is in the vault (00_SESSION_JOURNAL/2026-08-22_session.md), and I updated the status map so tomorrow-morning-you opens to the real state: security scare = benign, the four-question file resolved, and the direction that actually landed.
+
+When you’re rested, it’s waiting for you — no decisions lost:
+
+The two things you’d actually enjoy: hot-rod build consulting (your passion, the one you lit up about) and auto expert-witness work for attorneys. We pick that thread back up, not another cold idea.
+One real security to-do that only you can do: rotate that OpenAI key at platform.openai.com when you get a minute, and export your ChatGPT chats before you cancel anything. Both are in the journal so you won’t forget.
+Quit and reopen Obsidian at some point so the plugin lockdown sticks.
+You did real work tonight, even if it didn’t feel like it — you cleared out five dead ends and found the two that fit who you actually are. That’s not nothing. That’s the hard part.
+
+Get some sleep, Shawn. It’ll all still be here, and it’s in good shape. Goodnight.
+
+
+Permission mode is set to Auto. Claude runs on its own and pauses if anything looks unsafe. This includes using your connectors and Claude in Chrome, unless you turn them off. Learn more
+
+
+Claude is AI and can make mistakes.

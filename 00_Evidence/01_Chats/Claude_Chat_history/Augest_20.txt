@@ -1,0 +1,92 @@
+Simon soup and dirty days and just nail them up. line with SRI.
+
+Understood — you’re heading to bed, so I’ll run this autonomously to completion and leave a custody receipt for you to read in the morning. Ground rules I’m following from your handoff: nothing frozen gets modified, append-only/supersession, and I will not fabricate the canonical four-question wording — if I can’t recover it with verified provenance, I say so.
+
+Let me set up the task list and start with the gating step: searching the vault for the canonical artifact and the Aug 18–20 material.
+
+Provenance essentially resolved. The four-question layer’s only verbatim home in the entire vault is tonight’s 2026-08-20_session.md §E — which I authored tonight as the “minimum sufficient architecture.” The other grep hits are unrelated. ChatGPT’s “recovered representation” is a near-verbatim paraphrase of it. Checking for existing SAP folders / local copies of the 5 ChatGPT files before I create anything.
+
+Provenance and reconciliation done. Findings: no pre-existing four-question artifact exists anywhere in the vault except tonight’s session file, and none of the 5 ChatGPT-side files have local duplicates — so I create fresh, provenance-labeled counterparts (no silent dupes). Marking tasks 1–2 done and authoring the custody artifacts.
+
+01 recovery referee handoff source 2026 08 20
+Document
+·MD
+02 custodian exception 4q provenance 2026 08 20
+Document
+·MD
+03 canonical 4q candidate unfrozen 2026 08 20
+Document
+·MD
+04 referee finding 001 dev set contamination 2026 08 20
+Document
+·MD
+05 dh02 1 vs 4q heldout ab test shell 2026 08 20
+Document
+·MD
+06 h1v1 disposition and h1v2 requirements 2026 08 20
+Document
+·MD
+07 custodian control v2 2026 08 20
+Document
+·MD
+00 status map
+Document
+·MD
+Custody receipt 2026 08 20
+Document
+·MD
+Congratulations , You've been nominated
+Spam
+ProfessionalWhosWho bodmchjtqtqumf.525...@kri1bw.nd05kt.fqro8a.us via sandbox-compliance-transformer.aistream.com.threateningfear.co.in (sent by uispeqtilz)
+Tue, Aug 18, 9:58 AM (2 days ago)
+to me
+Why is this message in spam? It seems to be an auto-reply to a message that pretended to be sent from your email address.
+Report not spamReport phishing
+You've Been Considered for Inclusion! Click Here
+PROFESSIONAL
+Who'sWho    
+Congratulations 2fastthompson,
+This letter serves to inform you that you were recently nominated for inclusion in the 2024 Professional Who’s Who publication. America's most trusted publication and community of top executives. Your prompt response is required to ensure your profile information is submitted accurately and within the allotted time period.
+Click Here to Accept Your Nomination >>
+Each candidate is selected individually based on your current position and previous acheivements, giving you the opportunity to represent your industry & profession.
+Once listed you will be featured among thousands of accomplished professionals. Being listing within Who's Who will help build your brand and reputation online. Get the recognition you deserve and showcase your skills and achievements you worked so hard for.
+There's no cost to apply or be included
+Click Here to Accept Your Nomination >>
+Your achievements are truly impressive, and I congratulate you on the accomplishments that have brought your name to our attention and look forward to receiving your submission.
+GET STARTED
+Sincerely,
+Joan Riley
+Editor-in-Chief, Professional Whos Who
+Please note: Inclusion carries no cost nor obligation to you of any kind.
+The above is an advertisement sent by Executive Leads Inc. 244 Pettit Ave Bellmore, NY 11710
+If you wish to unsubscribe from all future mailings, please Click Here
+The advertiser does not manage your subscription.
+style="color: #777; text-decoration: underline;" target="_blank">Unsubscribe
+this was in my email  is iy a scam
+
+Vault reconciliation is done — you can sleep on it. Then your email question at the bottom.
+
+SAP custody — filed and hashed. New folder 07_RESEARCH_INTEL/SRI_DISCOVERY/2026-08-20_SAP/ with 8 artifacts (source handoff, custodian exception, candidate-canonical four-questions, referee finding 001, pre-registered A/B shell, H1-v1 disposition, custodian control v2, custody receipt) + SHA256SUMS. Status map and journal updated append-only. DH-02.1 and every frozen construct: untouched (verified — no frozen file modified today).
+
+The one finding that matters most for morning: the four-question layer was never actually lost. Its only verbatim home in the whole vault is tonight’s session file §E — which I wrote tonight. ChatGPT couldn’t find it because it lives in the Claude session, not ChatGPT’s library. So most likely it originated here rather than being a lost original. I’ve held it as candidate/unfrozen and did not fabricate a canonical, because there’s a residual unknown I can’t close: whether an earlier version exists on your phone/Downloads/other-AI chats — none of which this session can reach.
+
+Per your mandate, the receipt ends exactly one way:
+
+CUSTODY INCOMPLETE — ITEMS REMAIN UNFILED. Strongest reason: every finding and disposition from the handoff is filed, but the exact canonical four-question wording is not yet provenance-frozen, and the out-of-vault sources that could confirm/exclude an earlier original weren’t accessible. One decision from you unblocks it in the morning: do you recall a four-question prompt that predates tonight (from ChatGPT, pasted via phone)? If no → I freeze the candidate as canonical. If yes → we recover that text first. Either way, the A/B test does not run until it’s frozen.
+
+The email — yes, it’s a scam. Don’t click anything in it, don’t reply, don’t “accept the nomination.” Delete it (or hit Report phishing, which you were already offered).
+
+Every marker is there: a “Who’s Who” vanity-directory racket (free to be “listed,” then they upsell you $200+ plaques/memberships and harvest your personal info), a garbage sender address (…@kri1bw.nd05kt.fqro8a.us routed through …threateningfear.co.in), a 2024 publication landing in your inbox in 2026, manufactured urgency and flattery, and unsubscribe links that just confirm your address is live. Gmail already flagged it and buried it in spam for exactly these reasons.
+
+One thing worth noting, not alarming: Gmail said it “pretended to be sent from your email address.” That’s spoofing — anyone can forge a From-line; it does not mean your account was hacked. If you want peace of mind, in the morning you can glance at Gmail → Settings → Filters/Forwarding to confirm nothing unfamiliar was added. But there’s no action needed tonight beyond deleting it.
+
+Get some sleep — the vault’s correct and waiting, with one clean decision at the top of the map for you.
+
+good night
+
+Good night, Shawn. Everything’s filed and the vault’s clean — one decision waiting at the top of the map (freeze the four-question canonical or recover the earlier version first), and nothing runs until you make it. Rest well.
+
+
+Permission mode is set to Auto. Claude runs on its own and pauses if anything looks unsafe. This includes using your connectors and Claude in Chrome, unless you turn them off. Learn more
+
+

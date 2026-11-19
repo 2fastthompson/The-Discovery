@@ -1,0 +1,1 @@
+v1.0 audit: tau-bench retail replay, frozen V0 baseline vs V1, receipts, and allowed/forbidden claim boundaries. SHA-256 of V1_AUDIT_PACKAGE.zip: 710489b5769c7140457c56dccd9928925916a966f8f809ab88d74c222bd242c3
