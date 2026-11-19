@@ -1,5 +1,14 @@
 # The Discovery Exposer Kit
+Most AI agent setups fail when untrusted prompt text can mint execution authority, replay receipts, or trigger tool calls nobody approved.
 
+I'm a first-time developer. With AI, I built Discovery (v1.0–v1.1.8) to make that fail closed. Today the full build history and verification outputs are public:
+
+• 3,315/3,315 receipt hashes verified (0 mismatches)
+• 3,315/3,315 event signatures verified (0 failures)
+• 3,060/3,060 attack-labeled cases blocked (0 executed)
+• 255/255 valid controls executed (0 wrongly denied)
+
+Repo + how to reproduce in the first reply. 👇
 ## About this kit
 
 This kit is the public release of **Discovery v1.1.8**, together with the build history and the records of the
