@@ -8,7 +8,7 @@ I'm a first-time developer. With AI, I built Discovery (v1.0–v1.1.8) to make t
 • 3,060/3,060 attack-labeled cases blocked (0 executed)
 • 255/255 valid controls executed (0 wrongly denied)
 
-Repo + how to reproduce in the first reply. 👇
+
 ## About this kit
 
 This kit is the public release of **Discovery v1.1.8**, together with the build history and the records of the
