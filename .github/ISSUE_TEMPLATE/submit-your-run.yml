@@ -1,0 +1,109 @@
+name: Submit your run
+description: Share the results of a local Discovery kit run so they can be checked and, if you agree, listed in the community results table.
+title: "[Run] "
+labels:
+  - submitted-run
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for running the kit on your machine. Nothing in this repository phones home. Results only come here if you choose to submit them.
+
+        Start from the README: unzip `02_DISCOVERY_VERSIONS/11_v1.1.8/V1_1_8_AUDIT_PACKAGE.zip`, then from the unzipped folder run `python tests/test_attacks.py`. A passing quick check prints `UNIT_FAILS []`.
+
+        For the full replay, follow `REPRO.md` inside the package (`python3 harness/run_replay.py --corpus both`). That writes `results/scoreboard.json`, `results/SCOREBOARD.md`, `results/receipts.jsonl`, and `results/cases.jsonl`. Receipts are Ed25519-signed, with a SHA-256 hash chain. The test public key is in `fixtures/test_ed25519.json`.
+
+        GitHub issue forms cannot attach files in the form itself. After you submit, drag `results/receipts.jsonl` onto the issue (optionally also `results/cases.jsonl`, or a zip of the `results/` folder). The packaged receipts file is about 9 MB.
+
+  - type: input
+    id: kit_version
+    attributes:
+      label: Repo / kit version or commit
+      description: The Discovery version or git commit you ran, for example v1.1.8 or the commit SHA of your clone.
+      placeholder: v1.1.8 or commit SHA
+    validations:
+      required: true
+
+  - type: input
+    id: os_hardware
+    attributes:
+      label: OS and hardware
+      description: Operating system, CPU or architecture, and enough hardware detail to describe the machine you used.
+      placeholder: Windows 11, Intel x86_64, 32 GB RAM
+    validations:
+      required: true
+
+  - type: textarea
+    id: command_run
+    attributes:
+      label: What was run (command)
+      description: Paste the exact command or commands you ran. The README quick check is `python tests/test_attacks.py`. The full replay in REPRO.md is `python3 harness/run_replay.py --corpus both`. If you independently checked receipts, mention that too (the evidence script `01_Findings/V1_1_8_evidence/evidence/claude_raw_reverify_v118.py` can be run from the unzipped package directory and reads `results/receipts.jsonl`, `results/cases.jsonl`, and `fixtures/test_ed25519.json`).
+      placeholder: python tests/test_attacks.py
+    validations:
+      required: true
+
+  - type: input
+    id: agent_model
+    attributes:
+      label: Agent or model used (if any)
+      description: If an AI agent or model helped you run or review the kit, name it. Leave this blank if you ran the tests yourself with no model in the loop.
+      placeholder: none, or the agent or model name
+    validations:
+      required: false
+
+  - type: textarea
+    id: results_summary
+    attributes:
+      label: Results summary
+      description: Paste `results/scoreboard.json` if you ran the full replay, or paste the console output of the quick check (for example, `UNIT_FAILS []`). You may also paste `results/SCOREBOARD.md`. This kit does not write a file named summary.json.
+      placeholder: UNIT_FAILS []
+    validations:
+      required: true
+
+  - type: textarea
+    id: receipts_attachment
+    attributes:
+      label: Attach receipts
+      description: After you submit this form, attach `results/receipts.jsonl` to the issue. Optionally attach `results/cases.jsonl` or a zip of the `results/` folder. If the upload is too large, attach a compressed copy or paste a link. Confirm here what you will attach.
+      placeholder: I will attach results/receipts.jsonl after submitting this issue.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: receipts_verified
+    attributes:
+      label: Were receipts verified locally?
+      description: The full replay records receipt checks in `results/scoreboard.json` under `receipt_verification_mismatches`. You can also run `01_Findings/V1_1_8_evidence/evidence/claude_raw_reverify_v118.py` against `results/receipts.jsonl` using the test public key in `fixtures/test_ed25519.json`.
+      options:
+        - "Yes, I verified receipts locally"
+        - "No, I did not verify receipts"
+        - "I did not generate or check receipts (quick check only)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what_broke
+    attributes:
+      label: Anything that broke or looked wrong
+      description: Errors, mismatches against the published evidence in `01_Findings/V1_1_8_evidence/`, unexpected output, or anything that looked off. Write "none" if the run was clean.
+      placeholder: none
+    validations:
+      required: true
+
+  - type: input
+    id: credit
+    attributes:
+      label: How should you be credited?
+      description: A GitHub or X handle to list in the community results table, or type anonymous if you do not want a name shown.
+      placeholder: "@yourhandle or anonymous"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: publish_consent
+    attributes:
+      label: Publication consent
+      description: Submissions are voluntary. Check this box if this run may be published in the README community results table, using the credit you chose above.
+      options:
+        - label: I agree that this submission may be published in the community results table.
+          required: true

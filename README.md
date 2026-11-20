@@ -9,6 +9,25 @@ I'm a first-time developer. With AI, I built Discovery (v1.0–v1.1.8) to make t
 • 255/255 valid controls executed (0 wrongly denied)
 
 
+## Ran it? Submit your signed results
+
+This kit does not phone home. Nothing is sent back unless you choose to share it.
+
+1. Clone or download this repository and check the files with `sha256sum -c SHA256SUMS.txt` (on Windows, `certutil -hashfile <file> SHA256`). Unzip `02_DISCOVERY_VERSIONS/11_v1.1.8/V1_1_8_AUDIT_PACKAGE.zip`.
+2. From the unzipped folder, run the quick check: `python tests/test_attacks.py`. It prints `UNIT_FAILS []` when every attack test passes. For the full replay, follow `REPRO.md` inside the package (`python3 harness/run_replay.py --corpus both`). That writes `results/scoreboard.json`, `results/SCOREBOARD.md`, `results/receipts.jsonl`, and `results/cases.jsonl`. Receipts are Ed25519-signed; the test public key is in `fixtures/test_ed25519.json`. You can also re-check receipts with `01_Findings/V1_1_8_evidence/evidence/claude_raw_reverify_v118.py`.
+3. Open a [Submit your run](https://github.com/2fastthompson/The-Discovery/issues/new?template=submit-your-run.yml) issue, paste your `results/scoreboard.json` or quick-check output, and attach `results/receipts.jsonl`.
+
+Submissions are voluntary. Testers who send a signed run can be listed below, or stay anonymous.
+
+### Community results
+
+Results below are self-reported until the attached receipts are verified.
+
+| Date | Credit | Kit / commit | What was run | Summary | Receipts verified |
+| --- | --- | --- | --- | --- | --- |
+
+_No community runs listed yet._
+
 ## About this kit
 
 This kit is the public release of **Discovery v1.1.8**, together with the build history and the records of the
