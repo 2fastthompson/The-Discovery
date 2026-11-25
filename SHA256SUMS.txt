@@ -1,4 +1,4 @@
-﻿b9e1da412e6428f5bf8f8309978b23f32739437ecc024f68133e0c98e1e30de8  ./.github/ISSUE_TEMPLATE/submit-your-run.yml
+b9e1da412e6428f5bf8f8309978b23f32739437ecc024f68133e0c98e1e30de8  ./.github/ISSUE_TEMPLATE/submit-your-run.yml
 c5e1b838e619ad51d182ba31857161a52a398b3c18ad1f2e88e319428427178e  ./00_Evidence/01_Chats/Chats_from_Discovery_Build/Alright, let's tear this apart. The.txtPressure_test.txt
 a8176244ab90b7f5f9e9f111274ff435ec9bc7ab0bf3ff61c075e117247040e0  ./00_Evidence/01_Chats/Chats_from_Discovery_Build/Deepseak_Upgrade_suggestions.txt
 a660a29830a3d306835c51e8a0791b36eed6a088fa431c38bd4278a7e527e637  ./00_Evidence/01_Chats/Chats_from_Discovery_Build/Diascovery_Recommendations_for_Upgrade.txt
@@ -93,6 +93,5 @@ a883a65123a5bef701f0cae38b966dae934975e693176e82859063d2947d41fa  ./02_DISCOVERY
 3d582eabfad6feb54d7678de1a554e8136528601f7cb495cca57f63045c9f55c  ./03_examples/SSM_SAMPLE_OUTPUT.md
 2da89f0541f2ac00a1c5eeb5ccf19121404ade9aa8317faa28725b7a2ffdd353  ./INDEX.txt
 4d948396b752cb99113c1e9117efc50a75681dbc268a1bd49ff711a24749581e  ./README.md
-3572a808174be82f0499d335ec61a337f6620618bda1a96ddf845d19254d2afe  ./SHA256SUMS.txt
 321ef871687d477fc41977f739f68583ebc887cfd27a8eeeae73dea89b72aace  ./VERSION_HISTORY.md
 30be5d244d904762aa1cd19c2255eefd0bef4578cc820eb4554903c21b6a4c20  ./verify_discovery.py
