@@ -5,7 +5,7 @@ Checks only published GitHub artifacts. Never loads SSM or gate code.
 import hashlib, os, shutil, subprocess, sys, tempfile
 
 REPO = "https://github.com/2fastthompson/The-Discovery.git"
-TAG = os.environ.get("DISCOVERY_TAG", "v1.1.8-public")
+TAG = os.environ.get("DISCOVERY_TAG", "v1.1.8-public-2")
 PRIVATE_PATTERNS = ("ssm_agent", "ssm_live", "executor_v", "gate/", "pc_local_ai_kit")
 
 def die(msg, code=1):
@@ -29,7 +29,7 @@ def main():
     try:
         print(f"Fetching public tag {TAG} ...")
         subprocess.check_call(
-            ["git", "clone", "--depth", "1", "--branch", TAG, REPO, work],
+            ["git", "-c", "core.autocrlf=false", "clone", "--depth", "1", "--branch", TAG, REPO, work],
             stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT,
         )
         for root, dirs, files in os.walk(work):
@@ -48,10 +48,12 @@ def main():
                 line = line.strip()
                 if not line or line.startswith("#"):
                     continue
-                parts = line.split()
+                parts = line.split(None, 1)
                 if len(parts) < 2:
                     continue
-                expected, rel = parts[0], parts[-1]
+                expected, rel = parts[0], parts[1].strip()
+                if rel.startswith("*"):
+                    rel = rel[1:]
                 full = os.path.join(work, rel)
                 if not os.path.isfile(full):
                     print(f"  MISSING {rel}")
